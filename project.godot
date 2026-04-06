@@ -20,7 +20,8 @@ folder_colors={
 "res://Assets/": "yellow",
 "res://Scenes/": "orange",
 "res://Scripts/": "blue",
-"res://UI/": "purple"
+"res://UI/": "purple",
+"res://tasks/": "green"
 }
 
 [physics]
