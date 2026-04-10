@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c15njtwxghk0q"]
+
+[ext_resource type="Script" uid="uid://b5gpw043yhwk5" path="res://tasks/task_08_samuel/l_1_weaver_bird.gd" id="1_t362d"]
+[ext_resource type="Texture2D" uid="uid://cu3hqcxemt1n1" path="res://Assets/Sprites/parrot.png" id="2_4bdx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rp8fq"]
+size = Vector2(85, 76)
+
+[node name="L1_WeaverBird" type="Area2D" unique_id=1699643353 groups=["hazard"]]
+script = ExtResource("1_t362d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1839601864]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_4bdx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=421994966]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_rp8fq")
