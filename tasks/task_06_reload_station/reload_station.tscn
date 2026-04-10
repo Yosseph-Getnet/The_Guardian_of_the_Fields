@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d2bhtghengtv4"]
+
+[ext_resource type="Texture2D" uid="uid://hvqbhndf3g4c" path="res://tasks/task_06_reload_station/stone_pile.png" id="1_c1hpd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mois"]
+radius = 36.013885
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6rbek"]
+radius = 27.166155
+
+[node name="ReloadStation" type="Area2D" unique_id=1985115818]
+y_sort_enabled = true
+scale = Vector2(1e-05, 1e-05)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=83642522]
+texture_filter = 1
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("1_c1hpd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1806921821]
+position = Vector2(0, -2)
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("CircleShape2D_6mois")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1690461034]
+scale = Vector2(1e-05, 1e-05)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1802070609]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("CircleShape2D_6rbek")
