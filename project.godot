@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="The_Guardian_of_the_Fields"
+run/main_scene="uid://brm6hho34imwb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -18,7 +19,6 @@ config/icon="res://icon.svg"
 
 folder_colors={
 "res://Assets/": "yellow",
-"res://Scenes/": "orange",
 "res://Scripts/": "blue",
 "res://UI/": "purple",
 "res://tasks/": "green"
