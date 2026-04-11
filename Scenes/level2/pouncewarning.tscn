@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dodbufu60udkt"]
+
+[ext_resource type="Texture2D" uid="uid://caicw7ip7ptlp" path="res://Assets/ui/—Pngtree—red exclamation mark in 3d_21053357.png" id="2_s4ke0"]
+
+[node name="pouncewarning" type="CanvasLayer" unique_id=149949541]
+metadata/_edit_vertical_guides_ = [-40541.0]
+
+[node name="WarningIcon" type="TextureRect" parent="." unique_id=1037850820]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_s4ke0")
+expand_mode = 1
+stretch_mode = 5
