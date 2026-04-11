@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://8g8jxy1lnp7f"]
+
+[ext_resource type="Script" uid="uid://b2teiw56l411r" path="res://progress_bar.gd" id="1_dnn24"]
+
+[node name="SurvivalUI" type="Control" unique_id=1273136462]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=180981898]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+script = ExtResource("1_dnn24")
