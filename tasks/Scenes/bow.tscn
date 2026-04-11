@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dcm1gtaiykc14"]
+
+[ext_resource type="Texture2D" uid="uid://c266aefswds6g" path="res://tasks/Assets/Sprites/bow_asset.png" id="1_lbova"]
+
+[node name="Bow" type="Node2D" unique_id=2051481949]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2032352439]
+texture_filter = 1
+texture = ExtResource("1_lbova")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=24153909]
