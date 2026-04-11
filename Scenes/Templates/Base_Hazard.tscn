@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dionla2ha2gh1"]
 
 [ext_resource type="Script" uid="uid://co7dd50pnmckb" path="res://Scripts/Core/Entity.gd" id="1_wn2ty"]
+[ext_resource type="PackedScene" uid="uid://byc26h8l8gtft" path="res://tasks/task_13_lion_stealth/L2_Lion.tscn" id="2_e77wl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0n5b6"]
+radius = 194.98718
 
 [node name="Node2D" type="Node2D" unique_id=381696497]
 
@@ -13,3 +15,6 @@ script = ExtResource("1_wn2ty")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base_Hazard" unique_id=1165536811]
 shape = SubResource("CircleShape2D_0n5b6")
+
+[node name="Node2D" parent="." unique_id=1032150303 instance=ExtResource("2_e77wl")]
+position = Vector2(806, 471)

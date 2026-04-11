@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://byc26h8l8gtft"]
+
+[ext_resource type="PackedScene" uid="uid://dionla2ha2gh1" path="res://Scenes/Templates/Base_Hazard.tscn" id="1_6arhp"]
+[ext_resource type="Script" uid="uid://t2lib5k4evhn" path="res://tasks/task_13_lion_stealth/L2_TallGrass.gd" id="2_otepc"]
+[ext_resource type="Texture2D" uid="uid://svjluj5aod0e" path="res://tasks/task_13_lion_stealth/L2_Lion.png" id="3_mnouq"]
+[ext_resource type="Script" uid="uid://f5mb41csd5ye" path="res://tasks/task_13_lion_stealth/L2_Lion.gd" id="4_mnouq"]
+[ext_resource type="Script" uid="uid://dgnxmiip4urbf" path="res://tasks/task_13_lion_stealth/TestPlayer.gd" id="5_32cqa"]
+[ext_resource type="Texture2D" uid="uid://b1idpimni254t" path="res://icon.svg" id="6_c5jfo"]
+[ext_resource type="PackedScene" uid="uid://dhlnjeanbrhru" path="res://tasks/task_13_lion_stealth/L2_TallGrass.tscn" id="7_mnouq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qj8v"]
+
+[node name="Node2D" unique_id=381696497 instance=ExtResource("1_6arhp")]
+
+[node name="Base_Hazard" parent="." index="0" unique_id=221807019]
+script = ExtResource("2_otepc")
+
+[node name="Sprite2D" parent="Base_Hazard" index="0" unique_id=1329763678]
+position = Vector2(-766, -291)
+scale = Vector2(1.8203125, 2.4375002)
+texture = ExtResource("3_mnouq")
+script = ExtResource("4_mnouq")
+
+[node name="CollisionShape2D" parent="Base_Hazard" index="1" unique_id=1165536811]
+position = Vector2(-687, -208)
+shape = null
+
+[node name="Player" type="CharacterBody2D" parent="." index="1" unique_id=1878797626]
+position = Vector2(-126, 211)
+script = ExtResource("5_32cqa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" index="0" unique_id=375081359]
+position = Vector2(-255, 96.00003)
+scale = Vector2(1.1484376, 0.8945313)
+texture = ExtResource("6_c5jfo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="1" unique_id=89887973]
+position = Vector2(185, -213)
+shape = SubResource("RectangleShape2D_5qj8v")
+
+[node name="Node2D2" parent="." index="2" unique_id=362661689 instance=ExtResource("7_mnouq")]
+position = Vector2(-773, -433)
