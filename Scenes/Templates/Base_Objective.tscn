@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://dwwf4i2gjepy7"]
 
-[ext_resource type="Script" uid="uid://bc1d5alahvuwn" path="res://Scripts/Core/Objective.gd" id="1_ssaxs"]
+[node name="Base_Objective" type="StaticBody2D" unique_id=1509433312 groups=["objective"]]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_muw4g"]
+[node name="CamelCaravan" type="PathFollow2D" parent="." unique_id=888699530]
+position = Vector2(-24895.617, -29440.281)
+loop = false
 
-[node name="Base_Objective" type="StaticBody2D" unique_id=1509433312]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CamelCaravan" unique_id=1592384736]
+position = Vector2(24895.617, 29440.281)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=618054262]
+[node name="DetectionArea" type="Area2D" parent="." unique_id=2136451793]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1412159677]
-shape = SubResource("CircleShape2D_muw4g")
-script = ExtResource("1_ssaxs")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1565770801]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1213345283]
