@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://wt6aygpodbl1"]
+
+[ext_resource type="Texture2D" uid="uid://dbvvorvqwnx11" path="res://Assets/Sprites/L1_Kolo_Buff.png" id="1_pr6hr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pr6hr"]
+
+[node name="EagleEye" type="Node2D" unique_id=64532865]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=631201463]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1507058869]
+position = Vector2(576, 324)
+texture = ExtResource("1_pr6hr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2028152770]
+position = Vector2(576, 324)
+shape = SubResource("CircleShape2D_pr6hr")
+
+[node name="BuffTimer" type="Timer" parent="Area2D" unique_id=881432862]
+wait_time = 10.0
+one_shot = true
