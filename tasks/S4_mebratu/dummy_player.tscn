@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dl85ga5u2dwvv"]
+
+[ext_resource type="Texture2D" uid="uid://b1idpimni254t" path="res://icon.svg" id="1_mhoph"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1275781198]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2001123775 groups=["player"]]
+texture_filter = 1
+position = Vector2(97, 66)
+texture = ExtResource("1_mhoph")

@@ -68,11 +68,13 @@ animations = [{
 radius = 29.0
 height = 58.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjn28"]
+
 [node name="AlphaBaboon" type="CharacterBody2D" unique_id=1678187426]
 script = ExtResource("1_3a8c7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1404693040]
-position = Vector2(293, 285)
+position = Vector2(291, 388)
 sprite_frames = SubResource("SpriteFrames_7pu1i")
 animation = &"idle"
 autoplay = "idle"
@@ -85,5 +87,6 @@ shape = SubResource("CapsuleShape2D_0fe24")
 position = Vector2(-24, -28)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1586783359]
+shape = SubResource("RectangleShape2D_jjn28")
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
