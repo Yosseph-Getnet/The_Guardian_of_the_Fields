@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://brsk5ajhlguak"]
+
+[ext_resource type="Texture2D" uid="uid://bmjia0ai2geat" path="res://Assets/Sprites/L2/L2_Borkoto.png" id="1_dotu3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wcr6h"]
+radius = 30.016663
+
+[node name="L2_Borkoto" type="Area2D" unique_id=1643563371]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=429759585]
+texture_filter = 1
+position = Vector2(57.5, 64.5)
+scale = Vector2(0.89062506, 0.89062494)
+texture = ExtResource("1_dotu3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=63690610]
+position = Vector2(57, 62)
+shape = SubResource("CircleShape2D_wcr6h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

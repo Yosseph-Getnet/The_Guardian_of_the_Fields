@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c2j1yx7gd4gl5"]
+
+[ext_resource type="Texture2D" uid="uid://dhbyvwsesukgd" path="res://Assets/Sprites/L2/L2_Rifle.png" id="1_dhtyo"]
+
+[node name="L2_Rifle" type="Node2D" unique_id=159545878]
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1361746304]
+
+[node name="ReloadTimer" type="Timer" parent="RayCast2D" unique_id=382696200]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1822603671]
+texture_filter = 1
+texture = ExtResource("1_dhtyo")
+
+[connection signal="timeout" from="RayCast2D/ReloadTimer" to="." method="_on_reload_timer_timeout"]
