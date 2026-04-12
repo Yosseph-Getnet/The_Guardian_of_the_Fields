@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://j0sylctru8mu"]
+
+[ext_resource type="PackedScene" uid="uid://dionla2ha2gh1" path="res://Scenes/Templates/Base_Hazard.tscn" id="1_base"]
+[ext_resource type="Script" uid="uid://cij74wsc4sljo" path="res://tasks/task_26_scavenger_king/scripts/ArmoredHyenaKingBoss.gd" id="2_boss"]
+[ext_resource type="Script" uid="uid://jqhjlcqfb53" path="res://tasks/task_26_scavenger_king/scripts/ScavengerKingVisuals.gd" id="3_vis"]
+[ext_resource type="Script" uid="uid://dxk4awxe21myx" path="res://tasks/task_26_scavenger_king/scripts/BossInertHazardArea.gd" id="4_inert"]
+[ext_resource type="Script" uid="uid://c861fxyccpqcf" path="res://tasks/task_26_scavenger_king/scripts/ArmoredHyenaKingPreviewCamera.gd" id="5_cam"]
+[ext_resource type="Texture2D" uid="uid://b1idpimni254t" path="res://icon.svg" id="6_icon"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_placeholder"]
+atlas = ExtResource("6_icon")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4rmi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_placeholder")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_col"]
+size = Vector2(128, 256)
+
+[node name="ArmoredHyenaKing" unique_id=374906552 instance=ExtResource("1_base")]
+
+[node name="Base_Hazard" parent="." index="0" unique_id=221807019]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("4_inert")
+
+[node name="CollisionShape2D" parent="Base_Hazard" index="1" unique_id=1165536811]
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Base_Hazard" index="2" unique_id=645596574]
+position = Vector2(329, 141)
+sprite_frames = SubResource("SpriteFrames_a4rmi")
+
+[node name="KingBody" type="CharacterBody2D" parent="." index="1" unique_id=1821264766]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("2_boss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KingBody" index="0" unique_id=1180687801]
+position = Vector2(96, 132)
+shape = SubResource("RectangleShape2D_col")
+
+[node name="Visuals" type="Node2D" parent="KingBody" index="1" unique_id=2115983507]
+script = ExtResource("3_vis")
+
+[node name="SpritePhase1" type="Sprite2D" parent="KingBody/Visuals" index="0" unique_id=1041344326]
+position = Vector2(95, 131)
+texture = ExtResource("6_icon")
+
+[node name="SpritePhase2" type="Sprite2D" parent="KingBody/Visuals" index="1" unique_id=2112869537]
+visible = false
+modulate = Color(1, 0.75, 0.75, 1)
+position = Vector2(96, 132)
+texture = ExtResource("6_icon")
+
+[node name="PreviewCamera" type="Camera2D" parent="." index="2" unique_id=378855681]
+position = Vector2(96, 132)
+enabled = false
+zoom = Vector2(3.5, 3.5)
+script = ExtResource("5_cam")
