@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmjia0ai2geat"
-path="res://.godot/imported/L2_Borkoto.png-2c67e107d24a0f65d6a8ce1963081d9e.ctex"
+uid="uid://dhbyvwsesukgd"
+path="res://.godot/imported/L2_Rifle.png-baa2d96dd54cbbd0af34151acb4929e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/L2/L2_Borkoto.png"
-dest_files=["res://.godot/imported/L2_Borkoto.png-2c67e107d24a0f65d6a8ce1963081d9e.ctex"]
+source_file="res://tasks/task_17_tesfahun/assets/L2_Rifle.png"
+dest_files=["res://.godot/imported/L2_Rifle.png-baa2d96dd54cbbd0af34151acb4929e5.ctex"]
 
 [params]
 
