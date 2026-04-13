@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dhlnjeanbrhru"]
+
+[ext_resource type="Texture2D" uid="uid://bw7e7xkfgmk2s" path="res://tasks/task_13_lion_stealth/L2_TallGrass.png" id="1_2rer5"]
+[ext_resource type="Script" uid="uid://t2lib5k4evhn" path="res://tasks/task_13_lion_stealth/L2_TallGrass.gd" id="2_0uhsf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uhsf"]
+size = Vector2(341, 189)
+
+[node name="TallGrass" type="Area2D" unique_id=112321530]
+script = ExtResource("2_0uhsf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1025663998]
+position = Vector2(45.499985, 31.499996)
+scale = Vector2(3.6328125, 4.234375)
+texture = ExtResource("1_2rer5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=809812761]
+position = Vector2(45.5, 55.5)
+shape = SubResource("RectangleShape2D_0uhsf")
