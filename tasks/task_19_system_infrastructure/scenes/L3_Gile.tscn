@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://d04jboi55ls74"]
 
-[ext_resource type="Script" uid="uid://h43xffgjg17j" path="res://tasks/task_19_system_infrastructure/script/autoAttack.gd" id="1_7r6uk"]
-[ext_resource type="Texture2D" uid="uid://bhq1vyh7e8yh8" path="res://tasks/task_19_system_infrastructure/assets/sprites/weapon_sprite.png" id="1_ionm2"]
-[ext_resource type="AudioStream" uid="uid://dbgx2vo857u83" path="res://tasks/task_19_system_infrastructure/assets/audio/melee sound.wav" id="3_wpxnl"]
-[ext_resource type="Texture2D" uid="uid://dyswpbiugfyip" path="res://tasks/task_19_system_infrastructure/assets/sprites/effects/Alternative_2_07.png" id="4_jrovh"]
+[ext_resource type="Script" uid="uid://h43xffgjg17j" path="res://tasks/task_19_system_infrastructure/script/L3_Gile.gd" id="1_rux2b"]
+[ext_resource type="Texture2D" uid="uid://ga224sf4f6od" path="res://tasks/task_19_system_infrastructure/assets/sprites/L3_Gile.png" id="2_rux2b"]
+[ext_resource type="Texture2D" uid="uid://cs2yp1t527kwo" path="res://tasks/task_19_system_infrastructure/assets/sprites/effects/L3_blade_slash_2.png" id="3_rux2b"]
+[ext_resource type="AudioStream" uid="uid://dbgx2vo857u83" path="res://tasks/task_19_system_infrastructure/assets/audio/melee sound.wav" id="4_0r13f"]
+[ext_resource type="Texture2D" uid="uid://ye8w0a40o8l0" path="res://tasks/task_19_system_infrastructure/assets/sprites/effects/L3_blade_slash.png" id="5_ql1ae"]
 
 [sub_resource type="Animation" id="Animation_p1t5m"]
-length = 0.001
+length = 0.13333334
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -79,10 +80,22 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D slash:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_rux2b")]
+}
 
 [sub_resource type="Animation" id="Animation_xhx67"]
 resource_name = "attack"
-length = 0.43333334
+length = 0.46666667
 step = 0.0222
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -115,10 +128,10 @@ tracks/2/path = NodePath("Sprite2D slash:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(562, 249.00002), Vector2(525.00006, 273), Vector2(536, 302)]
+"values": [Vector2(562, 249.00002), Vector2(568, 292.99997), Vector2(554, 300), Vector2(552, 371)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -127,10 +140,10 @@ tracks/3/path = NodePath("Sprite2D slash:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [2.8448868, 3.0822515, 3.3196163]
+"values": [2.8448868, 0.21924344, 0.94784474, 1.2935219]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -151,10 +164,22 @@ tracks/5/path = NodePath("Sprite2D slash:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.35),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D slash:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [ExtResource("3_rux2b"), ExtResource("5_ql1ae"), ExtResource("3_rux2b")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1tmw0"]
@@ -163,30 +188,30 @@ _data = {
 &"attack": SubResource("Animation_xhx67")
 }
 
-[node name="melee" type="Node2D" unique_id=2056527477]
-script = ExtResource("1_7r6uk")
+[node name="L3_Gile" type="Node2D" unique_id=2056527477]
+script = ExtResource("1_rux2b")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=985679666]
 position = Vector2(436, 302)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1057329211]
-position = Vector2(-3, -57)
-polygon = PackedVector2Array(-0.3859011, -81.091125, 34.614098, -52.091125, 34.614098, 63.908875, 12.614099, 68.908875, -9.385901, 69.908875, -34.385902, 63.908875, -34.385902, -54.091125)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=472058621]
+polygon = PackedVector2Array(49, -167, 16, -114, 5, -81, 1, -34, 12, 29, 17, 61, -46, 44, -46, -25, -46, -84, -43, -109, -24, -137, 2, -157)
 
 [node name="Sprite2D melee" type="Sprite2D" parent="Area2D" unique_id=2044618668]
-position = Vector2(2.000001, 2)
-scale = Vector2(1.7608696, 0.77835053)
-texture = ExtResource("1_ionm2")
+position = Vector2(-58, -31.000008)
+rotation = 2.0922425
+scale = Vector2(0.6851734, 1.1618469)
+texture = ExtResource("2_rux2b")
 offset = Vector2(-1.9876709, -38.864258)
 
 [node name="Sprite2D slash" type="Sprite2D" parent="." unique_id=728063631]
 visible = false
 position = Vector2(562, 249.00002)
-scale = Vector2(1.785714, 2.7633336)
-texture = ExtResource("4_jrovh")
+scale = Vector2(1.785714, 3.124011)
+texture = ExtResource("3_rux2b")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1467998734]
-stream = ExtResource("3_wpxnl")
+stream = ExtResource("4_0r13f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1971703057]
 libraries/ = SubResource("AnimationLibrary_1tmw0")

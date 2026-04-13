@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhq1vyh7e8yh8"
-path="res://.godot/imported/weapon_sprite.png-db84ccc35b42c4f626cb8176c606607a.ctex"
+uid="uid://cs2yp1t527kwo"
+path="res://.godot/imported/L3_blade_slash_2.png-61aae66991b9797611a633d9b749c0f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tasks/task_19_system_infrastructure/assets/sprites/weapon_sprite.png"
-dest_files=["res://.godot/imported/weapon_sprite.png-db84ccc35b42c4f626cb8176c606607a.ctex"]
+source_file="res://tasks/task_19_system_infrastructure/assets/sprites/effects/L3_blade_slash_2.png"
+dest_files=["res://.godot/imported/L3_blade_slash_2.png-61aae66991b9797611a633d9b749c0f5.ctex"]
 
 [params]
 

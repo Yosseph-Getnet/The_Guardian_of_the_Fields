@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyswpbiugfyip"
-path="res://.godot/imported/Alternative_2_07.png-bfe75e8428de37492a3cc54ca367a4d3.ctex"
+uid="uid://ga224sf4f6od"
+path="res://.godot/imported/L3_Gile.png-5dfd9f488c0782f901b1fc212a61e0ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tasks/task_19_system_infrastructure/assets/sprites/effects/Alternative_2_07.png"
-dest_files=["res://.godot/imported/Alternative_2_07.png-bfe75e8428de37492a3cc54ca367a4d3.ctex"]
+source_file="res://tasks/task_19_system_infrastructure/assets/sprites/L3_Gile.png"
+dest_files=["res://.godot/imported/L3_Gile.png-5dfd9f488c0782f901b1fc212a61e0ca.ctex"]
 
 [params]
 
