@@ -12,6 +12,9 @@ bird_scene = ExtResource("2_8egus")
 
 [node name="SwarmAudio" type="AudioStreamPlayer" parent="." unique_id=1099051935]
 stream = ExtResource("3_oa6lk")
+volume_db = 20.0
 
 [node name="L1_WeaverBird" parent="." unique_id=1699643353 instance=ExtResource("2_8egus")]
 position = Vector2(-222, 664)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1875399115]
