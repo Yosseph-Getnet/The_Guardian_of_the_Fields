@@ -4,19 +4,16 @@
 [ext_resource type="Script" uid="uid://t2lib5k4evhn" path="res://tasks/task_13_lion_stealth/L2_TallGrass.gd" id="2_0uhsf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0uhsf"]
-size = Vector2(582, 340)
+size = Vector2(341, 189)
 
-[node name="Node2D" type="Node2D" unique_id=362661689]
-position = Vector2(1576, 579)
-
-[node name="TallGrass" type="Area2D" parent="." unique_id=388578859]
+[node name="TallGrass" type="Area2D" unique_id=112321530]
 script = ExtResource("2_0uhsf")
 
-[node name="Sprite2D" type="Sprite2D" parent="TallGrass" unique_id=458159097]
-position = Vector2(271.5, 167)
-scale = Vector2(5.2421875, 6.21875)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1025663998]
+position = Vector2(45.499985, 31.499996)
+scale = Vector2(3.6328125, 4.234375)
 texture = ExtResource("1_2rer5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TallGrass" unique_id=64792464]
-position = Vector2(281, 202)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=809812761]
+position = Vector2(45.5, 55.5)
 shape = SubResource("RectangleShape2D_0uhsf")
