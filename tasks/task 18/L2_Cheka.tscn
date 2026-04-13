@@ -1,13 +1,16 @@
-[gd_scene format=3 uid="uid://cbh63bf376ki1"]
+[gd_scene format=3 uid="uid://bpn4pkejymaa0"]
 
-[ext_resource type="Script" uid="uid://besthk76x30r3" path="res://cheka_bottle.gd" id="1_ff6pn"]
-[ext_resource type="Texture2D" uid="uid://v6wfwq1p376x" path="res://L2_Cheka.png" id="2_g1wo3"]
-[ext_resource type="PackedScene" uid="uid://cgvlpmgrn6fku" path="res://tasks/L2_RifleAmmo.tscn" id="3_epj6v"]
-[ext_resource type="Texture2D" uid="uid://dgoe6ly4ob8rs" path="res://L2_RifleAmmo.png" id="4_f7uig"]
+[ext_resource type="Script" path="res://tasks/task 18/cheka_bottle.gd" id="1_ff6pn"]
+[ext_resource type="Texture2D" uid="uid://juvs1rjh7thd" path="res://tasks/task 18/L2_Cheka.png" id="2_d47e1"]
+[ext_resource type="PackedScene" uid="uid://ovw4asehwd1i" path="res://tasks/task 18/L2_RifleAmmo.tscn" id="3_epj6v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsaab"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3uopf"]
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c0dy5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d47e1"]
 
 [node name="Node2D" type="Node2D" unique_id=628409714]
 metadata/_edit_vertical_guides_ = [287.0]
@@ -16,6 +19,7 @@ metadata/_edit_vertical_guides_ = [287.0]
 script = ExtResource("1_ff6pn")
 
 [node name="Sprite2D" type="Sprite2D" parent="ChekaBottle" unique_id=2106493953]
+texture = ExtResource("2_d47e1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChekaBottle" unique_id=179359987]
 position = Vector2(-1, 5)
@@ -23,7 +27,7 @@ shape = SubResource("RectangleShape2D_rsaab")
 
 [node name="L2Cheka" type="Sprite2D" parent="ChekaBottle" unique_id=2041299818]
 position = Vector2(268, -63)
-texture = ExtResource("2_g1wo3")
+texture = SubResource("CompressedTexture2D_3uopf")
 
 [node name="L2RifleAmmo" type="Sprite2D" parent="." unique_id=270236383]
 position = Vector2(427, -87)
@@ -34,4 +38,4 @@ position = Vector2(120, 79)
 
 [node name="L2RifleAmmo2" type="Sprite2D" parent="." unique_id=183390349]
 position = Vector2(410, -110)
-texture = ExtResource("4_f7uig")
+texture = SubResource("CompressedTexture2D_d47e1")
