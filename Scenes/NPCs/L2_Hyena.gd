@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extendsres Base_Hazard
 
 @export var speed: float = 110.0
 @export var damage: int = 15
@@ -19,7 +19,7 @@ func _physics_process(_delta):
 	var direction = (target.global_position - global_position).normalized()
 	
 	# 2. Zig-Zag Logic (Per Brief S-12)
-	# Uses sine wave to offset movement perpendicular to the target
+	# Uses sine                                                                        wave to offset movement perpendicular to the target
 	var side_way = Vector2(-direction.y, direction.x)
 	var zig_zag = sin(Time.get_ticks_msec() * 0.002 + phase_offset)
 	
@@ -29,6 +29,6 @@ func _physics_process(_delta):
 # Triggered when Hyena touches Zebu
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("objective"):
-		if body.has_method("take_damage"):
-			body.take_damage(damage)
+		if body.has_method("TakeDamage"):
+			body.TakeDamage(damage)
 			queue_free() # Hyena disappears after biting
