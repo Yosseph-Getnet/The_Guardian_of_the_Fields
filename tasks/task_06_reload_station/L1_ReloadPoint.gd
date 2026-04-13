@@ -9,13 +9,13 @@ func _on_body_entered(body):
 		print("Press E to reload")
 
 func _on_body_exited(body):
-	if body.name == "Nole":
+	Ssif body.name == "Nole":
 		can_interact = false
 
 func _process(_delta):
 	# Requirement: Reload on 'E' key press 
-	if can_interact and Input.is_action_just_pressed("ui_accept") and not on_cooldown:
-		reload_ammo()
+	if can_interact and Input.is_action_just_pressed("interact") and not on_cooldown:
+	reload_ammo()
 
 func reload_ammo():
 	# Requirement: Set ammo to max [cite: 45, 54]
