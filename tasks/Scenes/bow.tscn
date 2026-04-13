@@ -1,11 +1,19 @@
 [gd_scene format=3 uid="uid://dcm1gtaiykc14"]
 
 [ext_resource type="Texture2D" uid="uid://c266aefswds6g" path="res://tasks/Assets/Sprites/bow_asset.png" id="1_lbova"]
+[ext_resource type="Script" uid="uid://chddlt4yyxi01" path="res://tasks/Scripts/bow.gd" id="1_qlvfj"]
+[ext_resource type="AudioStream" uid="uid://d4iki0onkal52" path="res://tasks/Assets/Audio/bow_release.mp3" id="3_qyx07"]
 
 [node name="Bow" type="Node2D" unique_id=2051481949]
+script = ExtResource("1_qlvfj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2032352439]
 texture_filter = 1
 texture = ExtResource("1_lbova")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=24153909]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1561223347]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=110020306]
+stream = ExtResource("3_qyx07")

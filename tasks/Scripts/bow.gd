@@ -11,19 +11,15 @@ var arrow_count := 10
 
 var arrow = preload("res://tasks/Scenes/arrow.tscn")
 
-var fire_audio: AudioStream
-@export var audio_stream_player_2d: AudioStreamPlayer2D
-
 func _ready() -> void:
-	if fire_audio:
-		audio_stream_player_2d.stream = fire_audio
+	pass
 
 func _physics_process(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
-	$Marker2D.look_at(mouse_pos)
-	
+	look_at(mouse_pos)
 	if Input.is_action_just_pressed("equip or unequip bow"):
 		bow_equipped = !bow_equipped
+		print('bow state changed')
 	
 	if Input.is_action_just_pressed("shoot_arrow") and bow_equipped and bow_cooldown:
 		if has_atleast_one_arrow():
@@ -54,25 +50,36 @@ func draw_duration_to_charge_strength(duration: float) -> float:
 	var max_strength = 800.0
 	
 	return min_strength + (max_strength - min_strength) * (norm * norm)
+	
+func calculate_damage(strength: float) -> float:
+	var min_damage = 10.0
+	var max_damage = 80.0
+	
+	var norm = strength / 800.0
+	norm = clamp(norm, 0.0, 1.0)
+	
+	return min_damage + (max_damage - min_damage) * (norm * norm)
 
 func fire_arrow(strength: float) -> void:
 	bow_cooldown = false
 	
 	var arrow_instance = arrow.instantiate()
-	arrow_instance.rotation = $Marker2D.rotation
+	arrow_instance.rotation = rotation
 	
 	arrow_instance.speed = strength
+	arrow_instance.damage = calculate_damage(strength)
 	
 	get_tree().current_scene.add_child(arrow_instance)
 	arrow_instance.global_position = $Marker2D.global_position
 	
-	if fire_audio:
-		audio_stream_player_2d.play()
+	$AudioStreamPlayer2D.play()
 	
 	consume_arrow()
 	
 	await get_tree().create_timer(0.4).timeout
 	bow_cooldown = true
+
+	print('Firing Arrow')
 
 func has_atleast_one_arrow() -> bool:
 	return arrow_count > 0
