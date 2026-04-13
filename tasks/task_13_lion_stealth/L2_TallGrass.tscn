@@ -10,12 +10,12 @@ size = Vector2(582, 340)
 position = Vector2(1576, 579)
 
 [node name="TallGrass" type="Area2D" parent="." unique_id=388578859]
+script = ExtResource("2_0uhsf")
 
 [node name="Sprite2D" type="Sprite2D" parent="TallGrass" unique_id=458159097]
 position = Vector2(271.5, 167)
 scale = Vector2(5.2421875, 6.21875)
 texture = ExtResource("1_2rer5")
-script = ExtResource("2_0uhsf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TallGrass" unique_id=64792464]
 position = Vector2(281, 202)
