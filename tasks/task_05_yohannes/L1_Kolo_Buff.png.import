@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbvvorvqwnx11"
-path="res://.godot/imported/L1_Kolo_Buff.png-c3880dfc30df114238aacbe03700ef56.ctex"
+uid="uid://bumo4k0rp8s0a"
+path="res://.godot/imported/L1_Kolo_Buff.png-af23b337f74e5d6feeb13bf08842f95a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/L1_Kolo_Buff.png"
-dest_files=["res://.godot/imported/L1_Kolo_Buff.png-c3880dfc30df114238aacbe03700ef56.ctex"]
+source_file="res://tasks/task_05_yohannes/L1_Kolo_Buff.png"
+dest_files=["res://.godot/imported/L1_Kolo_Buff.png-af23b337f74e5d6feeb13bf08842f95a.ctex"]
 
 [params]
 
