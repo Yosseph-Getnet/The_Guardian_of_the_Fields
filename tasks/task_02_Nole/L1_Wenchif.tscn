@@ -1,44 +1,44 @@
 [gd_scene format=3 uid="uid://w7xfpwcbs7wx"]
 
-[ext_resource type="Script" uid="uid://bj0bobim0lnrq" path="res://tasks/task_02_Nole/L1_Wenchif.gd" id="1_8k7vf"]
-[ext_resource type="Texture2D" uid="uid://wjb5mi6mnblr" path="res://tasks/task_02_Nole/L1_Wenchif.png" id="2_hv7gt"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hv7gt"]
-atlas = ExtResource("2_hv7gt")
-region = Rect2(64, 0, 64, 64)
+[ext_resource type="Script" uid="uid://bj0bobim0lnrq" path="res://tasks/task_02_Nole/L1_Wenchif.gd" id="1_a6ki1"]
+[ext_resource type="Texture2D" uid="uid://wjb5mi6mnblr" path="res://tasks/task_02_Nole/L1_Wenchif.png" id="2_idg0h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_reuk6"]
-atlas = ExtResource("2_hv7gt")
+atlas = ExtResource("2_idg0h")
 region = Rect2(128, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv7gt"]
+atlas = ExtResource("2_idg0h")
+region = Rect2(64, 0, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmiyf"]
-atlas = ExtResource("2_hv7gt")
+atlas = ExtResource("2_idg0h")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gevb5"]
-atlas = ExtResource("2_hv7gt")
+atlas = ExtResource("2_idg0h")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tau7c"]
-atlas = ExtResource("2_hv7gt")
+atlas = ExtResource("2_idg0h")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_reuk6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hv7gt")
+"texture": SubResource("AtlasTexture_reuk6")
 }],
 "loop": true,
-"name": &"charging",
+"name": &"attack",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_reuk6")
+"texture": SubResource("AtlasTexture_hv7gt")
 }],
 "loop": true,
-"name": &"firing",
+"name": &"charge",
 "speed": 5.0
 }, {
 "frames": [{
@@ -57,7 +57,7 @@ animations = [{
 }]
 
 [node name="Wenchif" type="Node2D" unique_id=1106747571]
-script = ExtResource("1_8k7vf")
+script = ExtResource("1_a6ki1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1722801772]
 sprite_frames = SubResource("SpriteFrames_reuk6")
@@ -65,5 +65,3 @@ animation = &"idle"
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=320611449]
 position = Vector2(-2, 10)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=513658910]

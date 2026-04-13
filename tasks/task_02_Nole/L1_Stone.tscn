@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://rrvqs1o1gbq2"]
 
-[ext_resource type="Texture2D" uid="uid://dd1h0yql7gwlu" path="res://tasks/task_02_Nole/L1_Stone.png" id="1_qb0gp"]
+[ext_resource type="Texture2D" uid="uid://dd1h0yql7gwlu" path="res://tasks/task_02_Nole/L1_Stone.png" id="1_bubl2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7w7ln"]
 
@@ -11,7 +11,7 @@ linear_damp = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=751963110]
 position = Vector2(1, 1)
-texture = ExtResource("1_qb0gp")
+texture = ExtResource("1_bubl2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=23681957]
 position = Vector2(0, -7)
