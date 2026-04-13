@@ -4,7 +4,13 @@ class_name L3_ScavengerKing
 ## rifle collision breach + exposed hide visuals (see `notify_rifle_hit_boss`).
 ## UC-L3-16: Vulnerable charge (20–80% integrity), linear acceleration, Tor stagger + 3s stun,
 ## post-stun jackal wave at Haboob perimeter, charge impact damage, Haboob friction hook.
-## S-17 rifle: `get_tree().call_group("boss", "notify_rifle_hit_boss")` after hit validation.
+##
+## S-17 (`L2_Rifle.tscn`): the rifle’s `rifle_hit_boss` signal has **no parameters**, so it
+## cannot be bound directly to `take_damage(amount, weapon)` without a `Callable.bind(...)`.
+## Connect it to **`apply_s17_rifle_hit_from_raycast`** instead: that runs `notify_rifle_hit_boss` in
+## phase one (armor break) and applies Dimotfer damage in phase two. This node is in group **`Boss`**
+## (capital B) so `RayCast2D` collision checks for that group match, and still in **`boss`** for
+## `call_group("boss", ...)`.
 
 enum Phase { ONE, TWO }
 
@@ -27,6 +33,8 @@ signal charge_impact_dealt(target: Node2D, integrity_loss_ratio: float)
 @export var haboob_perimeter_spawn_radius: float = 480.0
 ## World-space center for jackal perimeter spawns; if `Vector2.ZERO`, uses group "Haboob" or this boss.
 @export var haboob_spawn_center_global: Vector2 = Vector2.ZERO
+## Used when `L2_Rifle.rifle_hit_boss` fires after armor is already broken (phase two only).
+@export var s17_rifle_damage_exposed: float = 40.0
 
 var integrity: float
 var phase: Phase = Phase.ONE
@@ -47,8 +55,17 @@ var _shake_vfx_active: bool = false
 func _ready() -> void:
 	integrity = max_integrity
 	add_to_group("boss")
+	add_to_group("Boss")
 	add_to_group("hazard")
 	visuals.set_phase(phase)
+
+
+## S-17: intended receiver for `L2_Rifle.rifle_hit_boss` (zero-arg signal).
+func apply_s17_rifle_hit_from_raycast() -> void:
+	if phase == Phase.ONE:
+		notify_rifle_hit_boss()
+	else:
+		take_damage(s17_rifle_damage_exposed, L3_Weapons.Kind.RIFLE)
 
 
 ## UC-L3-16 A2: Haboob at max intensity — pass `0.75` so charge top speed is reduced by 25%.
