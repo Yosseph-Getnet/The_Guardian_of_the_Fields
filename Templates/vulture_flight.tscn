@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dhv8jxrkrdcsl"]
+
+[ext_resource type="Script" uid="uid://dxhsbbiypye35" path="res://Scripts/Core/pathFollow.gd" id="1_l62fo"]
+
+[sub_resource type="Curve2D" id="Curve2D_sjbco"]
+
+[node name="vulture_flight" type="Node2D" unique_id=104953060]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1748041822]
+curve = SubResource("Curve2D_sjbco")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1409263643]
+script = ExtResource("1_l62fo")
