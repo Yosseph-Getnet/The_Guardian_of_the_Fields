@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dionla2ha2gh1"]
 
-[ext_resource type="Script" uid="uid://co7dd50pnmckb" path="res://Scripts/Core/Entity.gd" id="1_wn2ty"]
+[ext_resource type="Script" uid="uid://co7dd50pnmckb" path="res://Scenes/Scripts/Core/Entity.gd" id="1_wn2ty"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0n5b6"]
 

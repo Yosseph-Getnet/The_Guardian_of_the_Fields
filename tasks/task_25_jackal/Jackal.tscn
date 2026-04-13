@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://bm6o2mb44imqc"]
+
+[ext_resource type="Texture2D" uid="uid://b1idpimni254t" path="res://icon.svg" id="1_vlh6x"]
+[ext_resource type="AudioStream" uid="uid://bq58x34elsp02" path="res://Assets/Audio/L3/L3_Jackal_Barking.wav" id="2_igm85"]
+[ext_resource type="Texture2D" uid="uid://bqb1fgh01o7p7" path="res://tasks/task_25_jackal/sprites/run/l0_sprite_1.png" id="2_roqtl"]
+[ext_resource type="Texture2D" uid="uid://bfyyrsdhltfu" path="res://tasks/task_25_jackal/sprites/bite/l0_sprite_1.png" id="2_uhdvi"]
+[ext_resource type="Texture2D" uid="uid://b25gi0tjqmhch" path="res://tasks/task_25_jackal/sprites/run/l0_sprite_2.png" id="3_8xi4i"]
+[ext_resource type="Texture2D" uid="uid://omie8og55sgo" path="res://tasks/task_25_jackal/sprites/bite/l0_sprite_2.png" id="3_ie4rm"]
+[ext_resource type="Texture2D" uid="uid://drj3tp6vuowhx" path="res://tasks/task_25_jackal/sprites/run/l0_sprite_3.png" id="4_2e8gd"]
+[ext_resource type="Texture2D" uid="uid://c1tdqoejxqnhd" path="res://tasks/task_25_jackal/sprites/bite/l0_sprite_3.png" id="4_7ub0u"]
+[ext_resource type="Texture2D" uid="uid://dbubmmufp1jhm" path="res://tasks/task_25_jackal/sprites/run/l0_sprite_4.png" id="5_3amd5"]
+[ext_resource type="Texture2D" uid="uid://wfynlbpk3gfe" path="res://tasks/task_25_jackal/sprites/bite/l0_sprite_4.png" id="5_v2u1w"]
+[ext_resource type="Texture2D" uid="uid://buleb33kfn5qx" path="res://tasks/task_25_jackal/sprites/flee/l0_sprite_1.png" id="6_6qse5"]
+[ext_resource type="Texture2D" uid="uid://8qaj6nnn8hsm" path="res://tasks/task_25_jackal/sprites/flee/l0_sprite_2.png" id="7_igm85"]
+[ext_resource type="Texture2D" uid="uid://c417nxrg53dq1" path="res://tasks/task_25_jackal/sprites/flee/l0_sprite_3.png" id="8_7qguo"]
+[ext_resource type="Texture2D" uid="uid://dtj4xnh2a8njp" path="res://tasks/task_25_jackal/sprites/flee/l0_sprite_4.png" id="9_vkihd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7ue7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcoyf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhdvi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uhdvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ie4rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7ub0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v2u1w")
+}],
+"loop": true,
+"name": &"bite",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_6qse5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_igm85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7qguo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vkihd")
+}],
+"loop": true,
+"name": &"flee",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_roqtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8xi4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2e8gd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3amd5")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[node name="Jackal" type="CharacterBody2D" unique_id=602423850]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=874858970]
+texture_filter = 1
+position = Vector2(799, 138)
+texture = ExtResource("1_vlh6x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1085866538]
+shape = SubResource("RectangleShape2D_d7ue7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1174988356]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=539739174]
+shape = SubResource("RectangleShape2D_xcoyf")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=242894314]
+
+[node name="BarkSound" type="AudioStreamPlayer2D" parent="." unique_id=773425747]
+stream = ExtResource("2_igm85")
+autoplay = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=918860610]
+texture_filter = 1
+position = Vector2(250, 150)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_uhdvi")
+animation = &"flee"
+autoplay = "flee"

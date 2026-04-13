@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwwf4i2gjepy7"]
 
-[ext_resource type="Script" uid="uid://bc1d5alahvuwn" path="res://Scripts/Core/Objective.gd" id="1_ssaxs"]
+[ext_resource type="Script" uid="uid://bc1d5alahvuwn" path="res://Scenes/Scripts/Core/Objective.gd" id="1_ssaxs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_muw4g"]
 
