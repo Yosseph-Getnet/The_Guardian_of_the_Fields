@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://63fg47mjsoos"]
+
+[ext_resource type="PackedScene" uid="uid://bs561oji266mb" path="res://Scenes/NPCs/L2_Zebu.tscn" id="1_7kiat"]
+[ext_resource type="PackedScene" uid="uid://d1lclj4ebfd6w" path="res://Scenes/NPCs/finish_line.tscn" id="2_282cj"]
+
+[node name="Node2D" type="Node2D" unique_id=718096410]
+
+[node name="zebu" parent="." unique_id=1054745237 instance=ExtResource("1_7kiat")]
+
+[node name="FinishLine" parent="." unique_id=733802269 instance=ExtResource("2_282cj")]
+position = Vector2(-458, -28)

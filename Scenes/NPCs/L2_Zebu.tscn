@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bs561oji266mb"]
 
-[ext_resource type="Texture2D" uid="uid://doutva0gy14f8" path="res://sprites/L2_Zebu.png" id="1_q2jwf"]
-[ext_resource type="Script" uid="uid://d2pm65c0jwm42" path="res://scrpits/zebu.gd" id="1_vin5x"]
+[ext_resource type="Texture2D" uid="uid://doutva0gy14f8" path="res://Assets/Sprites/L2/L2_Zebu.png" id="1_q2jwf"]
+[ext_resource type="Script" uid="uid://d2pm65c0jwm42" path="res://Scripts/zebu.gd" id="1_vin5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_krn4d"]
 atlas = ExtResource("1_q2jwf")
