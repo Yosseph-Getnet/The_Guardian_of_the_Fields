@@ -1,5 +1,5 @@
 extends Camera2D
-## When this boss file is the run root (F6), center the view. When instanced under a level, stays off.
+## When `L3_ScavengerKing.tscn` is the run root (F6), center the view. When instanced under a level, stays off.
 
 
 func _ready() -> void:

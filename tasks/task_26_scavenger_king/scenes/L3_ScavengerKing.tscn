@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://j0sylctru8mu"]
 
 [ext_resource type="PackedScene" uid="uid://dionla2ha2gh1" path="res://Scenes/Templates/Base_Hazard.tscn" id="1_base"]
-[ext_resource type="Script" uid="uid://cij74wsc4sljo" path="res://tasks/task_26_scavenger_king/scripts/ArmoredHyenaKingBoss.gd" id="2_boss"]
-[ext_resource type="Script" uid="uid://jqhjlcqfb53" path="res://tasks/task_26_scavenger_king/scripts/ScavengerKingVisuals.gd" id="3_vis"]
-[ext_resource type="Script" uid="uid://dxk4awxe21myx" path="res://tasks/task_26_scavenger_king/scripts/BossInertHazardArea.gd" id="4_inert"]
-[ext_resource type="Script" uid="uid://c861fxyccpqcf" path="res://tasks/task_26_scavenger_king/scripts/ArmoredHyenaKingPreviewCamera.gd" id="5_cam"]
+[ext_resource type="Script" uid="uid://cij74wsc4sljo" path="res://tasks/task_26_scavenger_king/scripts/L3_ScavengerKing.gd" id="2_boss"]
+[ext_resource type="Script" uid="uid://jqhjlcqfb53" path="res://tasks/task_26_scavenger_king/scripts/L3_ScavengerKingVisuals.gd" id="3_vis"]
+[ext_resource type="Script" uid="uid://dxk4awxe21myx" path="res://tasks/task_26_scavenger_king/scripts/L3_BossInertHazardArea.gd" id="4_inert"]
+[ext_resource type="Script" uid="uid://c861fxyccpqcf" path="res://tasks/task_26_scavenger_king/scripts/L3_ScavengerKingPreviewCamera.gd" id="5_cam"]
 [ext_resource type="Texture2D" uid="uid://b1idpimni254t" path="res://icon.svg" id="6_icon"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_placeholder"]
@@ -25,7 +25,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_col"]
 size = Vector2(128, 256)
 
-[node name="ArmoredHyenaKing" unique_id=374906552 instance=ExtResource("1_base")]
+[node name="L3_ScavengerKing" unique_id=374906552 instance=ExtResource("1_base")]
 
 [node name="Base_Hazard" parent="." index="0" unique_id=221807019]
 collision_layer = 0
@@ -40,7 +40,7 @@ position = Vector2(329, 141)
 sprite_frames = SubResource("SpriteFrames_a4rmi")
 
 [node name="KingBody" type="CharacterBody2D" parent="." index="1" unique_id=1821264766]
-collision_layer = 4
+collision_layer = 3
 collision_mask = 9
 script = ExtResource("2_boss")
 

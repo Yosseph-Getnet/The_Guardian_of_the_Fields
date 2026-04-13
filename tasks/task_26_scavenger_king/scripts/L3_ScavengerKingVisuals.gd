@@ -1,5 +1,5 @@
 extends Node2D
-class_name ScavengerKingVisuals
+class_name L3_ScavengerKingVisuals
 ## Phase 1 = armored, Phase 2 = exposed (swap textures + visibility).
 ##
 ## Hooking real art:
@@ -18,7 +18,7 @@ func _ready() -> void:
 	_sprite_armored = get_node_or_null("SpritePhase1") as Sprite2D
 	_sprite_exposed = get_node_or_null("SpritePhase2") as Sprite2D
 	if _sprite_armored == null or _sprite_exposed == null:
-		push_error("ScavengerKingVisuals: expected child nodes SpritePhase1 and SpritePhase2.")
+		push_error("L3_ScavengerKingVisuals: expected child nodes SpritePhase1 and SpritePhase2.")
 		return
 	if texture_armored != null:
 		_sprite_armored.texture = texture_armored
