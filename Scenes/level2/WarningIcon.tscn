@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dodbufu60udkt"]
 
-[ext_resource type="Texture2D" uid="uid://caicw7ip7ptlp" path="res://Assets/ui/—Pngtree—red exclamation mark in 3d_21053357.png" id="2_s4ke0"]
+[ext_resource type="Texture2D" uid="uid://caicw7ip7ptlp" path="res://Assets/ui/L2_WarningIcon.png" id="2_s4ke0"]
 
 [node name="pouncewarning" type="CanvasLayer" unique_id=149949541]
 metadata/_edit_vertical_guides_ = [-40541.0]

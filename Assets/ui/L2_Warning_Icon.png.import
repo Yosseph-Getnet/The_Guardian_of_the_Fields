@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0vhuek2qcctm"
-path="res://.godot/imported/rustle_soft_circle.png-ce05001a3dd365a99104817cf2bf23ff.ctex"
+uid="uid://pcbh4hpue31x"
+path="res://.godot/imported/L2_Warning_Icon.png-233369006486e936a2ae0890f165bd52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/rustle_soft_circle.png"
-dest_files=["res://.godot/imported/rustle_soft_circle.png-ce05001a3dd365a99104817cf2bf23ff.ctex"]
+source_file="res://Assets/ui/L2_Warning_Icon.png"
+dest_files=["res://.godot/imported/L2_Warning_Icon.png-233369006486e936a2ae0890f165bd52.ctex"]
 
 [params]
 

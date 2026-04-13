@@ -1,38 +1,84 @@
-extends CanvasLayer  # Root node type
+extends CanvasLayer
 
-# Reference the TextureRect node (the warning icon)
+# =========================
+# UI REFERENCES
+# =========================
 @onready var warning_icon = $WarningIcon
 
-# This function runs when the scene is ready
+# Runtime reference (DO NOT use @onready for group lookup)
+var lion = null
+
+# Prevent UI spam / overlapping warnings
+var warning_active = false
+
+
+# =========================
+# READY
+# =========================
 func _ready():
-	# Start with the warning icon hidden
 	warning_icon.visible = false
 
-# Function to show the warning icon
+	# Get lion safely AFTER scene is ready
+	lion = get_tree().get_first_node_in_group("lion")
+
+	if lion:
+		lion.lion_pounce_warning.connect(on_lion_pounce_warning)
+	else:
+		push_error("Lion not found in scene tree!")
+
+
+# =========================
+# UI CONTROL
+# =========================
 func show_warning():
 	warning_icon.visible = true
 
-# Function to hide the warning icon
+
 func hide_warning():
 	warning_icon.visible = false
 
-# This function will be called when the lion is about to pounce
-# "position" parameter can be used later to spawn particles at the correct location
+
+# =========================
+# SIGNAL FROM LION
+# =========================
 func on_lion_pounce_warning(position: Vector2):
+	# prevent overlapping warnings
+	if warning_active:
+		return
+
+	warning_active = true
+
 	show_warning()
 	spawn_grass_particles(position)
 
-	await get_tree().create_timer(1.5).timeout
+	# Use lion's own timing (fallback to 1.5 if missing)
+	var wait_time := 1.5
+	if lion and lion.has_method("get_warning_time"):
+		wait_time = lion.get_warning_time()
+
+	await get_tree().create_timer(wait_time).timeout
 
 	hide_warning()
+	warning_active = false
+
+
+# =========================
+# GRASS RUSTLE EFFECT
+# =========================
 func spawn_grass_particles(position: Vector2):
-	var rustle_scene = preload("res://Scenes/Levels/GrassRustle.tscn")
+	var rustle_scene = preload("res://Scenes/level2/GrassRustle.tscn")
 	var rustle = rustle_scene.instantiate()
-	
-	rustle.position = position
+
+	rustle.global_position = position
 	get_tree().current_scene.add_child(rustle)
-	
-	rustle.restart() # IMPORTANT FIX 
+
+	if rustle.has_method("restart"):
+		rustle.restart()
+
+
+# =========================
+# DEBUG TEST (OPTIONAL)
+# =========================
 func _input(event):
-	if event.is_action_pressed("ui_accept"):  # press Enter or Space
-		$PounceWarning._on_lion_pounce_warning(Vector2(300,200))                   # add to the scene
+	if event.is_action_pressed("ui_accept"):
+		on_lion_pounce_warning(Vector2(300, 200))

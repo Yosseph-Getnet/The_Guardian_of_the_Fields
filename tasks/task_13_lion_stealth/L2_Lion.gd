@@ -1,6 +1,6 @@
 extends "res://Scripts/Core/Entity.gd"
 
-signal lion_pounce_warning
+signal lion_pounce_warning(position)
 signal lion_pounced
 
 const STEALTH_OPACITY = 0.3
@@ -13,6 +13,7 @@ var target_player = null
 
 func _ready():
 	modulate.a = 1.0
+	add_to_group("lion") # ✅ FIXED HERE
 
 func enter_grass():
 	is_in_grass = true
@@ -37,13 +38,11 @@ func check_pounce():
 func start_pounce():
 	is_pouncing = true
 	
-	emit_signal("lion_pounce_warning")
+	emit_signal("lion_pounce_warning", global_position)
 	await get_tree().create_timer(WARNING_TIME).timeout
 	
 	modulate.a = 1.0
 	emit_signal("lion_pounced")
-	
-	# TODO: Add pounce attack logic here
 	
 	is_pouncing = false
 
