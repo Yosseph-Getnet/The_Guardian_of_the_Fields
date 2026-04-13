@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw7e7xkfgmk2s"
-path="res://.godot/imported/L2_TallGrass.png-41d7f78779fa25bfad2d9607f7f4d8d8.ctex"
+uid="uid://dmxwmjl1eyse5"
+path="res://.godot/imported/L2_Grass.png-f40ce295b09942128dd27ae6a67a666e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tasks/task_13_lion_stealth/L2_TallGrass.png"
-dest_files=["res://.godot/imported/L2_TallGrass.png-41d7f78779fa25bfad2d9607f7f4d8d8.ctex"]
+source_file="res://Assets/ui/L2_Grass.png"
+dest_files=["res://.godot/imported/L2_Grass.png-f40ce295b09942128dd27ae6a67a666e.ctex"]
 
 [params]
 

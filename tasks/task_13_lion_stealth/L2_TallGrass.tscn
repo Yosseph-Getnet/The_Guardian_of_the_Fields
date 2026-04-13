@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhlnjeanbrhru"]
 
-[ext_resource type="Texture2D" uid="uid://bw7e7xkfgmk2s" path="res://tasks/task_13_lion_stealth/L2_TallGrass.png" id="1_2rer5"]
+[ext_resource type="Texture2D" uid="uid://bw7e7xkfgmk2s" path="res://Assets/ui/L2_TallGrass.png" id="1_2rer5"]
 [ext_resource type="Script" uid="uid://t2lib5k4evhn" path="res://tasks/task_13_lion_stealth/L2_TallGrass.gd" id="2_0uhsf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0uhsf"]
