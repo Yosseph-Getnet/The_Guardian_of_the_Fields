@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d37okj0g4hegj"]
+
+[ext_resource type="Script" uid="uid://dnrmxldvjd834" path="res://tasks/task_22_caravan/caravan.gd" id="1_k0f1q"]
+[ext_resource type="Texture2D" uid="uid://bkayb8vaqh47x" path="res://camal 2.png" id="2_dyu3t"]
+
+[sub_resource type="Curve2D" id="Curve2D_k0f1q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -581.16235, 2, 0, 0, 0, 0, 980.9619, 22)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7cjo"]
+size = Vector2(0, 0)
+
+[node name="Caravan" type="Node2D" unique_id=595066485]
+script = ExtResource("1_k0f1q")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1656802591]
+position = Vector2(0, 300)
+scale = Vector2(1, 1.002)
+curve = SubResource("Curve2D_k0f1q")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1879069071]
+rotates = false
+loop = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1168011996]
+texture = ExtResource("2_dyu3t")
+region_enabled = true
+region_rect = Rect2(0, 0, 1024, 1024)
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D" unique_id=684696162]
+rotation = 0.41634533
+scale = Vector2(1.002004, 1)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D" unique_id=601995230]
+position = Vector2(14, -61)
+shape = SubResource("RectangleShape2D_s7cjo")
