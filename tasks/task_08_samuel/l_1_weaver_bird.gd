@@ -8,6 +8,9 @@ var wave_frequency: float = 5.0    # How fast it flaps up and down
 var time_passed: float = 0.0
 var start_y: float = 0.0
 
+# --- COMBAT VARIABLES ---
+var health: int = 1  # 1 hit from the wenchif will kill it
+
 func _ready():
 	# Remember exactly where the bird spawns so it waves around that baseline height
 	start_y = position.y
@@ -25,6 +28,7 @@ func _process(delta):
 	# 3. Apply the sine wave math for the continuous up-and-down flight pattern
 	position.y = start_y + (sin(time_passed * wave_frequency) * wave_amplitude)
 
+# --- COLLISION / ATTACKING ---
 func _on_area_entered(area: Area2D):
 	# Check if the object we collided with belongs to the "objective" group
 	if area.is_in_group("objective"):
@@ -33,3 +37,13 @@ func _on_area_entered(area: Area2D):
 		
 		# Destroy the bird so it doesn't drain the health infinitely
 		queue_free()
+
+# --- TAKING DAMAGE ---
+func take_damage(amount: int):
+	health -= amount
+	if health <= 0:
+		die()
+
+func die():
+	# In the future, you could play a "poof" animation or feather particle effect here!
+	queue_free() # Instantly delete the bird from the game
