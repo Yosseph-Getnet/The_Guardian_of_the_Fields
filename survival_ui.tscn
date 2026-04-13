@@ -10,8 +10,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=180981898]
-layout_mode = 0
-offset_right = 4.0
-offset_bottom = 27.0
+[node name="progress_bar_gd" type="ProgressBar" parent="." unique_id=180981898]
+custom_minimum_size = Vector2(600, 40)
+layout_mode = 1
+offset_right = 600.0
+offset_bottom = 40.0
 script = ExtResource("1_dnn24")
