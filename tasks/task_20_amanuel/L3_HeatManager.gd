@@ -25,7 +25,7 @@ signal thirst_depleted()
 
 # NODE REFERENCES
 # =========================
-@onready var heartbeat_sfx: AudioStreamPlayer = $HeartbeatSFX
+@onready var heartbeat_sfx: AudioStreamPlayer2D = $HeartbeatSFX
 
 # INTERNAL STATE
 # =========================
