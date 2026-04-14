@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="The_Guardian_of_the_Fields"
-
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://s11e1jgjyqp"
+L3_HeatManager="*uid://e0wc4xrow831"
 
 [file_customization]
 
