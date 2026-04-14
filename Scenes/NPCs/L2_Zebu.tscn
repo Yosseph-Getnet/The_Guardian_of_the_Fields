@@ -20,6 +20,7 @@ atlas = ExtResource("1_q2jwf")
 region = Rect2(768, 408, 256, 204)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_es3sn"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -83,7 +84,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ta26d"]
 size = Vector2(196, 75.5)
 
-[node name="zebu" type="CharacterBody2D" unique_id=1054745237]
+[node name="zebu" type="CharacterBody2D" unique_id=1054745237 groups=["objective"]]
 collision_layer = 2
 script = ExtResource("1_vin5x")
 
@@ -91,15 +92,10 @@ script = ExtResource("1_vin5x")
 position = Vector2(1, -21)
 sprite_frames = SubResource("SpriteFrames_es3sn")
 autoplay = "default"
-frame_progress = 0.7727675
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D" unique_id=2034690664]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_0brgf")
-
-[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D/AnimationPlayer" unique_id=771884074]
-position = Vector2(-2, -2)
-position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490649741]
 position = Vector2(1, -23)

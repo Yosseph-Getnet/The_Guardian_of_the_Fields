@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://wvg4tpvkibe7" path="res://Scenes/NPCs/finish_line.gd" id="1_hkssx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkssx"]
-size = Vector2(20, 318)
+size = Vector2(13, 527)
 
 [node name="FinishLine" type="Area2D" unique_id=733802269]
 position = Vector2(-649, -2)
@@ -11,7 +11,7 @@ collision_mask = 3
 script = ExtResource("1_hkssx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=762301266]
-position = Vector2(722, 19)
+position = Vector2(720.5, -23.5)
 shape = SubResource("RectangleShape2D_hkssx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

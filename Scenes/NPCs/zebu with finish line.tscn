@@ -4,8 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://d1lclj4ebfd6w" path="res://Scenes/NPCs/finish_line.tscn" id="2_282cj"]
 
 [node name="Node2D" type="Node2D" unique_id=718096410]
+position = Vector2(288, 13)
 
 [node name="zebu" parent="." unique_id=1054745237 instance=ExtResource("1_7kiat")]
+up_direction = Vector2(0.99998754, -0.004999938)
 
 [node name="FinishLine" parent="." unique_id=733802269 instance=ExtResource("2_282cj")]
-position = Vector2(-458, -28)
+position = Vector2(-147, -28)
+
+[node name="zebu2" parent="." unique_id=976110801 instance=ExtResource("1_7kiat")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=982343682]
+position = Vector2(294, -45)
+
+[node name="zebu3" parent="." unique_id=1538138156 instance=ExtResource("1_7kiat")]
+
+[node name="zebu4" parent="." unique_id=1883500453 instance=ExtResource("1_7kiat")]
