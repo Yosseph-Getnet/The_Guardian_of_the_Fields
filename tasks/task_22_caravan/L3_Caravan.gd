@@ -11,6 +11,7 @@ func _ready():
 	# Ensure the detection area is looking for hazards
 	if detection_area:
 		detection_area.collision_layer = 2
+		detection_area.collision_mask = 4
 		detection_area.body_entered.connect(_on_body_entered)
 		detection_area.body_exited.connect(_on_body_exited)
 
