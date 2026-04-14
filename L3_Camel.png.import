@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkayb8vaqh47x"
-path="res://.godot/imported/camal 2.png-88b1b44a4d627e07d539e355ea3a9bf7.ctex"
+uid="uid://c4ujlmcsilfet"
+path="res://.godot/imported/L3_Camel.png-2683308b003355bd42fdc343070b3acd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://camal 2.png"
-dest_files=["res://.godot/imported/camal 2.png-88b1b44a4d627e07d539e355ea3a9bf7.ctex"]
+source_file="res://L3_Camel.png"
+dest_files=["res://.godot/imported/L3_Camel.png-2683308b003355bd42fdc343070b3acd.ctex"]
 
 [params]
 
