@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5c53vqvuk1lw"
-path="res://.godot/imported/L3_ScavengerKing_P2_4.png-91e14f3db01c14dc193cfa40650fc67b.ctex"
+path="res://.godot/imported/L3_ScavengerKing_P2_4.png-26ae12f4acc1fa7c6cffe01641ea00d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tasks/task_26_scavenger_king/Assets/phase2/L3_ScavengerKing_P2_4.png"
-dest_files=["res://.godot/imported/L3_ScavengerKing_P2_4.png-91e14f3db01c14dc193cfa40650fc67b.ctex"]
+source_file="res://tasks/task_26_scavenger_king/assets/phase2/L3_ScavengerKing_P2_4.png"
+dest_files=["res://.godot/imported/L3_ScavengerKing_P2_4.png-26ae12f4acc1fa7c6cffe01641ea00d0.ctex"]
 
 [params]
 

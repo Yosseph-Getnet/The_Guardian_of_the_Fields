@@ -5,30 +5,14 @@
 [ext_resource type="Script" uid="uid://jqhjlcqfb53" path="res://tasks/task_26_scavenger_king/scripts/L3_ScavengerKingVisuals.gd" id="3_vis"]
 [ext_resource type="Script" uid="uid://dxk4awxe21myx" path="res://tasks/task_26_scavenger_king/scripts/L3_BossInertHazardArea.gd" id="4_inert"]
 [ext_resource type="Script" uid="uid://c861fxyccpqcf" path="res://tasks/task_26_scavenger_king/scripts/L3_ScavengerKingPreviewCamera.gd" id="5_cam"]
-[ext_resource type="Texture2D" uid="uid://b1idpimni254t" path="res://icon.svg" id="6_icon"]
-[ext_resource type="Texture2D" uid="uid://2x7pr83nhko8" path="res://tasks/task_26_scavenger_king/Assets/phase1/L3_ScavengerKing_P1_1.png" id="7_p1_1"]
-[ext_resource type="Texture2D" uid="uid://dvjdtgaxdiblg" path="res://tasks/task_26_scavenger_king/Assets/phase1/L3_ScavengerKing_P1_2.png" id="8_p1_2"]
-[ext_resource type="Texture2D" uid="uid://vt6meurw0bk1" path="res://tasks/task_26_scavenger_king/Assets/phase1/L3_ScavengerKing_P1_3.png" id="9_p1_3"]
-[ext_resource type="Texture2D" uid="uid://chvnyll7mngui" path="res://tasks/task_26_scavenger_king/Assets/phase1/L3_ScavengerKing_P1_4.png" id="10_p1_4"]
-[ext_resource type="Texture2D" uid="uid://bu41gtcn4165v" path="res://tasks/task_26_scavenger_king/Assets/phase2/L3_ScavengerKing_P2_1.png" id="11_p2_1"]
-[ext_resource type="Texture2D" uid="uid://bclbdj88a7jj" path="res://tasks/task_26_scavenger_king/Assets/phase2/L3_ScavengerKing_P2_2.png" id="12_p2_2"]
-[ext_resource type="Texture2D" uid="uid://d3vt7ue1d4c1c" path="res://tasks/task_26_scavenger_king/Assets/phase2/L3_ScavengerKing_P2_3.png" id="13_p2_3"]
-[ext_resource type="Texture2D" uid="uid://5c53vqvuk1lw" path="res://tasks/task_26_scavenger_king/Assets/phase2/L3_ScavengerKing_P2_4.png" id="14_p2_4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_placeholder"]
-atlas = ExtResource("6_icon")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_a4rmi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_placeholder")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://2x7pr83nhko8" path="res://tasks/task_26_scavenger_king/assets/phase1/L3_ScavengerKing_P1_1.png" id="7_p1_1"]
+[ext_resource type="Texture2D" uid="uid://dvjdtgaxdiblg" path="res://tasks/task_26_scavenger_king/assets/phase1/L3_ScavengerKing_P1_2.png" id="8_p1_2"]
+[ext_resource type="Texture2D" uid="uid://vt6meurw0bk1" path="res://tasks/task_26_scavenger_king/assets/phase1/L3_ScavengerKing_P1_3.png" id="9_p1_3"]
+[ext_resource type="Texture2D" uid="uid://chvnyll7mngui" path="res://tasks/task_26_scavenger_king/assets/phase1/L3_ScavengerKing_P1_4.png" id="10_p1_4"]
+[ext_resource type="Texture2D" uid="uid://bu41gtcn4165v" path="res://tasks/task_26_scavenger_king/assets/phase2/L3_ScavengerKing_P2_1.png" id="11_p2_1"]
+[ext_resource type="Texture2D" uid="uid://bclbdj88a7jj" path="res://tasks/task_26_scavenger_king/assets/phase2/L3_ScavengerKing_P2_2.png" id="12_p2_2"]
+[ext_resource type="Texture2D" uid="uid://d3vt7ue1d4c1c" path="res://tasks/task_26_scavenger_king/assets/phase2/L3_ScavengerKing_P2_3.png" id="13_p2_3"]
+[ext_resource type="Texture2D" uid="uid://5c53vqvuk1lw" path="res://tasks/task_26_scavenger_king/assets/phase2/L3_ScavengerKing_P2_4.png" id="14_p2_4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_col"]
 size = Vector2(128, 256)
@@ -83,17 +67,12 @@ script = ExtResource("4_inert")
 [node name="CollisionShape2D" parent="Base_Hazard" index="1" unique_id=1165536811]
 disabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Base_Hazard" index="2" unique_id=645596574]
-position = Vector2(329, 141)
-sprite_frames = SubResource("SpriteFrames_a4rmi")
-
 [node name="KingBody" type="CharacterBody2D" parent="." index="1" unique_id=1821264766]
 collision_layer = 3
 collision_mask = 9
 script = ExtResource("2_boss")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KingBody" index="0" unique_id=1180687801]
-position = Vector2(96, 132)
 shape = SubResource("RectangleShape2D_col")
 
 [node name="Visuals" type="Node2D" parent="KingBody" index="1" unique_id=2115983507]
@@ -101,15 +80,14 @@ script = ExtResource("3_vis")
 
 [node name="SpritePhase1" type="AnimatedSprite2D" parent="KingBody/Visuals" index="0" unique_id=1041344326]
 visible = false
-position = Vector2(95, 131)
 sprite_frames = SubResource("SpriteFrames_p1")
 autoplay = "default"
 
 [node name="SpritePhase2" type="AnimatedSprite2D" parent="KingBody/Visuals" index="1" unique_id=2112869537]
 modulate = Color(1, 0.75, 0.75, 1)
-position = Vector2(96, 132)
 sprite_frames = SubResource("SpriteFrames_p2")
 autoplay = "default"
+frame_progress = 0.11901473
 
 [node name="PreviewCamera" type="Camera2D" parent="." index="2" unique_id=378855681]
 position = Vector2(96, 132)
