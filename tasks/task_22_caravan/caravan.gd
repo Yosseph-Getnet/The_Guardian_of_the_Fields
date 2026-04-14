@@ -1,5 +1,4 @@
-extends "res://Scenes/Templates/Base_Objective.gd"
-
+extends "res://Scripts/Core/Objective.gd"
 # --- References ---
 @onready var path_follow = $Path2D/PathFollow2D
 # This path is updated to find Area2D inside PathFollow2D
