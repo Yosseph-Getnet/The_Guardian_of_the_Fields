@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cgnjkw6cxo8u2"]
+
+[ext_resource type="PackedScene" uid="uid://cayurf8x6jj8k" path="res://tasks/task_22_caravan/L3_Caravan.tscn" id="1_smbai"]
+[ext_resource type="PackedScene" uid="uid://ctm8m6gacuy2a" path="res://tasks/task_23_water_source/L3_WaterGourd.tscn" id="2_7qimn"]
+[ext_resource type="PackedScene" uid="uid://cfl204wqr7p8o" path="res://tasks/task_21_abel/L3_Haboob.tscn" id="3_4bym3"]
+[ext_resource type="PackedScene" uid="uid://j0sylctru8mu" path="res://tasks/task_26_scavenger_king/scenes/L3_ScavengerKing.tscn" id="4_4slu6"]
+[ext_resource type="PackedScene" uid="uid://8g8jxy1lnp7f" path="res://tasks/task_27_jibril/survival_ui.tscn" id="5_8f4g7"]
+[ext_resource type="Script" uid="uid://bvrrh047ird1c" path="res://Scripts/L3_Main.gd" id="6_7qimn"]
+
+[sub_resource type="Curve2D" id="Curve2D_qo8jy"]
+
+[node name="L3_Main" type="Node2D" unique_id=1799858005]
+
+[node name="Background" type="Node2D" parent="." unique_id=98685719]
+
+[node name="TileMap" type="TileMap" parent="Background" unique_id=362993316]
+format = 2
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=34109020]
+
+[node name="CaravanPath" type="Path2D" parent="." unique_id=1661735614]
+curve = SubResource("Curve2D_qo8jy")
+
+[node name="L3_Caravan" parent="CaravanPath" unique_id=877785775 instance=ExtResource("1_smbai")]
+
+[node name="WaterSources" type="Node2D" parent="." unique_id=690731267]
+
+[node name="L3_WaterSource" parent="WaterSources" unique_id=95077836 instance=ExtResource("2_7qimn")]
+
+[node name="L3_WaterSource2" parent="WaterSources" unique_id=1719856843 instance=ExtResource("2_7qimn")]
+
+[node name="L3_WaterSource3" parent="WaterSources" unique_id=1017143305 instance=ExtResource("2_7qimn")]
+
+[node name="Hazards" type="Node2D" parent="." unique_id=1587026128]
+
+[node name="L3_Haboob" parent="Hazards" unique_id=1331484395 instance=ExtResource("3_4bym3")]
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1105233536]
+
+[node name="L3_ScavengerKing" parent="Enemies" unique_id=374906552 instance=ExtResource("4_4slu6")]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2129119963]
+
+[node name="L3_SurvivalUI" parent="UI" unique_id=1273136462 instance=ExtResource("5_8f4g7")]
+
+[node name="LevelController" type="Node" parent="." unique_id=1947039731]
+script = ExtResource("6_7qimn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=919837098]
+position = Vector2(-202, 313)
