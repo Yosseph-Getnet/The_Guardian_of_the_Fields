@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bk4vdwap17xga"]
+
+[ext_resource type="Texture2D" uid="uid://svjluj5aod0e" path="res://tasks/task_13_lion_stealth/L2_Lion.png" id="1_3l6hk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m30y7"]
+atlas = ExtResource("1_3l6hk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe7vy"]
+atlas = ExtResource("1_3l6hk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo2pr"]
+atlas = ExtResource("1_3l6hk")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r0r8"]
+atlas = ExtResource("1_3l6hk")
+region = Rect2(192, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m30y7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe7vy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qo2pr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r0r8")
+}],
+"loop": true,
+"name": &"pounce",
+"speed": 9.0
+}]

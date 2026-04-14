@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://co7dd50pnmckb" path="res://Scripts/Core/Entity.gd" id="1_wn2ty"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0n5b6"]
-radius = 194.98718
+radius = 135.85654
 
 [node name="Node2D" type="Node2D" unique_id=381696497]
 
@@ -14,5 +14,3 @@ script = ExtResource("1_wn2ty")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base_Hazard" unique_id=1165536811]
 shape = SubResource("CircleShape2D_0n5b6")
-
-

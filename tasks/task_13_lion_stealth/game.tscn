@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d38i78sidwcr7"]
+
+[ext_resource type="PackedScene" uid="uid://737sa21x3f6o" path="res://tasks/task_13_lion_stealth/player.tscn" id="1_b8qew"]
+[ext_resource type="Script" uid="uid://prbdwhdqwsla" path="res://tasks/task_13_lion_stealth/TestManager.gd" id="1_fr74f"]
+[ext_resource type="PackedScene" uid="uid://dhlnjeanbrhru" path="res://tasks/task_13_lion_stealth/L2_TallGrass.tscn" id="2_xopdg"]
+[ext_resource type="PackedScene" uid="uid://byc26h8l8gtft" path="res://tasks/task_13_lion_stealth/L2_Lion.tscn" id="3_mn0sx"]
+
+[node name="Game" type="Node2D" unique_id=1668958486]
+script = ExtResource("1_fr74f")
+
+[node name="Player" parent="." unique_id=840840540 instance=ExtResource("1_b8qew")]
+position = Vector2(200, 300)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1075874065]
+position = Vector2(400, 300)
+
+[node name="L2_Lion" parent="." unique_id=201493953 instance=ExtResource("3_mn0sx")]
+position = Vector2(179, 366)
+
+[node name="L2_TallGrass" parent="." unique_id=112321530 instance=ExtResource("2_xopdg")]
+position = Vector2(610, 379)

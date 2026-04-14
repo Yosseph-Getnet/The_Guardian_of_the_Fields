@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://36eep7wck7bq"]
+
+[ext_resource type="Texture2D" uid="uid://g3rmesammeu" path="res://tasks/task_13_lion_stealth/Lion_walking.png" id="1_31rem"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6l8k"]
+atlas = ExtResource("1_31rem")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g381t"]
+atlas = ExtResource("1_31rem")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11xfc"]
+atlas = ExtResource("1_31rem")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kx0m"]
+atlas = ExtResource("1_31rem")
+region = Rect2(192, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6l8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g381t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11xfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kx0m")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
