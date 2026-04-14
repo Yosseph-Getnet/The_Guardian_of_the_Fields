@@ -6,6 +6,14 @@
 [ext_resource type="Script" uid="uid://dxk4awxe21myx" path="res://tasks/task_26_scavenger_king/scripts/L3_BossInertHazardArea.gd" id="4_inert"]
 [ext_resource type="Script" uid="uid://c861fxyccpqcf" path="res://tasks/task_26_scavenger_king/scripts/L3_ScavengerKingPreviewCamera.gd" id="5_cam"]
 [ext_resource type="Texture2D" uid="uid://b1idpimni254t" path="res://icon.svg" id="6_icon"]
+[ext_resource type="Texture2D" uid="uid://2x7pr83nhko8" path="res://tasks/task_26_scavenger_king/Assets/phase1/L3_ScavengerKing_P1_1.png" id="7_p1_1"]
+[ext_resource type="Texture2D" uid="uid://dvjdtgaxdiblg" path="res://tasks/task_26_scavenger_king/Assets/phase1/L3_ScavengerKing_P1_2.png" id="8_p1_2"]
+[ext_resource type="Texture2D" uid="uid://vt6meurw0bk1" path="res://tasks/task_26_scavenger_king/Assets/phase1/L3_ScavengerKing_P1_3.png" id="9_p1_3"]
+[ext_resource type="Texture2D" uid="uid://chvnyll7mngui" path="res://tasks/task_26_scavenger_king/Assets/phase1/L3_ScavengerKing_P1_4.png" id="10_p1_4"]
+[ext_resource type="Texture2D" uid="uid://bu41gtcn4165v" path="res://tasks/task_26_scavenger_king/Assets/phase2/L3_ScavengerKing_P2_1.png" id="11_p2_1"]
+[ext_resource type="Texture2D" uid="uid://bclbdj88a7jj" path="res://tasks/task_26_scavenger_king/Assets/phase2/L3_ScavengerKing_P2_2.png" id="12_p2_2"]
+[ext_resource type="Texture2D" uid="uid://d3vt7ue1d4c1c" path="res://tasks/task_26_scavenger_king/Assets/phase2/L3_ScavengerKing_P2_3.png" id="13_p2_3"]
+[ext_resource type="Texture2D" uid="uid://5c53vqvuk1lw" path="res://tasks/task_26_scavenger_king/Assets/phase2/L3_ScavengerKing_P2_4.png" id="14_p2_4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_placeholder"]
 atlas = ExtResource("6_icon")
@@ -24,6 +32,46 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_col"]
 size = Vector2(128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_p1_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p1_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p1_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p1_4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_p2_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p2_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_p2_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_p2_4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="L3_ScavengerKing" unique_id=374906552 instance=ExtResource("1_base")]
 
@@ -51,15 +99,17 @@ shape = SubResource("RectangleShape2D_col")
 [node name="Visuals" type="Node2D" parent="KingBody" index="1" unique_id=2115983507]
 script = ExtResource("3_vis")
 
-[node name="SpritePhase1" type="Sprite2D" parent="KingBody/Visuals" index="0" unique_id=1041344326]
-position = Vector2(95, 131)
-texture = ExtResource("6_icon")
-
-[node name="SpritePhase2" type="Sprite2D" parent="KingBody/Visuals" index="1" unique_id=2112869537]
+[node name="SpritePhase1" type="AnimatedSprite2D" parent="KingBody/Visuals" index="0" unique_id=1041344326]
 visible = false
+position = Vector2(95, 131)
+sprite_frames = SubResource("SpriteFrames_p1")
+autoplay = "default"
+
+[node name="SpritePhase2" type="AnimatedSprite2D" parent="KingBody/Visuals" index="1" unique_id=2112869537]
 modulate = Color(1, 0.75, 0.75, 1)
 position = Vector2(96, 132)
-texture = ExtResource("6_icon")
+sprite_frames = SubResource("SpriteFrames_p2")
+autoplay = "default"
 
 [node name="PreviewCamera" type="Camera2D" parent="." index="2" unique_id=378855681]
 position = Vector2(96, 132)
