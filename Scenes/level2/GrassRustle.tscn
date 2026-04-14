@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bik70jxy5mwx3"]
+
+[ext_resource type="Texture2D" uid="uid://dmxwmjl1eyse5" path="res://Assets/ui/L2_Grass.png" id="1_muoou"]
+
+[sub_resource type="Gradient" id="Gradient_t3v5i"]
+offsets = PackedFloat32Array(0.72054225, 1)
+colors = PackedColorArray(0.24705882, 0.5568628, 0.10980392, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uwrht"]
+gradient = SubResource("Gradient_t3v5i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r66ix"]
+lifetime_randomness = 0.18
+particle_flag_rotate_y = true
+particle_flag_damping_as_friction = true
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+spread = 68.793
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+color_ramp = SubResource("GradientTexture1D_uwrht")
+
+[node name="GrassRustle" type="GPUParticles2D" unique_id=6641442]
+position = Vector2(0, 2)
+emitting = false
+amount = 3
+texture = ExtResource("1_muoou")
+lifetime = 1.29
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_r66ix")
