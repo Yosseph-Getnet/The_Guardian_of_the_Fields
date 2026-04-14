@@ -11,13 +11,10 @@ config_version=5
 [application]
 
 config/name="The_Guardian_of_the_Fields"
-run/main_scene="uid://bnedpp54ax4hp"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
 
-Global="*uid://s11e1jgjyqp"
 
 [file_customization]
 
