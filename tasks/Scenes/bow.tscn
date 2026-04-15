@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dcm1gtaiykc14"]
 
-[ext_resource type="Texture2D" uid="uid://c266aefswds6g" path="res://tasks/Assets/Sprites/bow_asset.png" id="1_lbova"]
+[ext_resource type="Texture2D" uid="uid://c266aefswds6g" path="res://Assets/Sprites/bow_asset.png" id="1_lbova"]
 [ext_resource type="Script" uid="uid://chddlt4yyxi01" path="res://tasks/Scripts/bow.gd" id="1_qlvfj"]
-[ext_resource type="AudioStream" uid="uid://d4iki0onkal52" path="res://tasks/Assets/Audio/bow_release.mp3" id="3_qyx07"]
+[ext_resource type="AudioStream" uid="uid://d4iki0onkal52" path="res://Assets/Sprites/Audio/bow_release.mp3" id="3_qyx07"]
 
 [node name="Bow" type="Node2D" unique_id=2051481949]
 script = ExtResource("1_qlvfj")

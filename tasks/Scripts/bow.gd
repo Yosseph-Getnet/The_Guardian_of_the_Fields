@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	look_at(mouse_pos)
 	if Input.is_action_just_pressed("equip or unequip bow"):
 		bow_equipped = !bow_equipped
-		print('bow state changed')
+		print('bow state changed, E pressed')
 	
 	if Input.is_action_just_pressed("shoot_arrow") and bow_equipped and bow_cooldown:
 		if has_atleast_one_arrow():
