@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bt33os4lwm1op"]
+
+[ext_resource type="Script" uid="uid://bn5ude2vh4vqd" path="res://Scripts/Player.gd" id="1_pl"]
+[ext_resource type="Script" uid="uid://bd64wxsck01fe" path="res://Scripts/SlingShot.gd" id="2_sl"]
+[ext_resource type="Texture2D" uid="uid://iswsr3ljh3bh" path="res://Assets/Sprites/guardian.png" id="4_ude3g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(31, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h54ih"]
+atlas = ExtResource("4_ude3g")
+region = Rect2(0, 133, 66, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wape"]
+atlas = ExtResource("4_ude3g")
+region = Rect2(330, 133, 66, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t26db"]
+atlas = ExtResource("4_ude3g")
+region = Rect2(132, 133, 66, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk5o5"]
+atlas = ExtResource("4_ude3g")
+region = Rect2(198, 133, 66, 133)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ji083"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h54ih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wape")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t26db")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk5o5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1410702202 groups=["player"]]
+collision_mask = 4
+script = ExtResource("1_pl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=41304626]
+position = Vector2(0.5, -40)
+shape = SubResource("RectangleShape2D_player")
+
+[node name="SlingShot" type="Node2D" parent="." unique_id=626051427]
+visible = false
+position = Vector2(0, -60)
+script = ExtResource("2_sl")
+
+[node name="Line2D" type="Line2D" parent="SlingShot" unique_id=274956642]
+visible = false
+points = PackedVector2Array(0, 0, 0, 0)
+width = 4.0
+default_color = Color(0.8, 0.8, 0.1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1910786286]
+offset = Vector2(0, -100)
+limit_left = -550
+limit_right = 1830
+limit_bottom = 720
+position_smoothing_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=348284588]
+position = Vector2(0, -66)
+sprite_frames = SubResource("SpriteFrames_ji083")
+frame_progress = 0.9642276

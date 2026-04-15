@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://c53esmpdb8cdc"]
+
+[ext_resource type="Script" uid="uid://smnm4hsxy876" path="res://Scripts/MainMenu.gd" id="1_script"]
+
+[node name="MainMenu" type="Control" unique_id=1787856703]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=57999856]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.180392, 0.309804, 0.180392, 1)
+
+[node name="Title" type="Label" parent="." unique_id=203449163]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -331.0
+offset_top = -120.0
+offset_right = 331.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "The Guardian of the Fields"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=1172450564]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 30.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Start Level 1"
+
+[node name="InstructionPanel" type="Panel" parent="." unique_id=2122694323]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InstructionLabel" type="Label" parent="InstructionPanel" unique_id=1724106135]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 30.0
+offset_right = 250.0
+offset_bottom = 300.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "HOW TO PLAY:
+
+1. Move: A / D or Left / Right arrows to move freely
+2. Aim & Shoot: Click & Drag away the wenchif to hit the hazards
+3. Reload: Press (E) near stone pile to reload the wenchif
+4. Objective: Defend the Teff Crops in 3 different waves (Each round it gets harder)s!"
+horizontal_alignment = 1
+
+[node name="ProceedButton" type="Button" parent="InstructionPanel" unique_id=525010914]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -80.0
+offset_right = 100.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Proceed to Game"

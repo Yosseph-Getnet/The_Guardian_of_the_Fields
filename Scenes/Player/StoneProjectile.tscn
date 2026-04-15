@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bunng0r11470w"]
+
+[ext_resource type="Script" uid="uid://bbcmklrpjbn3o" path="res://Scripts/StoneProjectile.gd" id="1_st"]
+[ext_resource type="Texture2D" uid="uid://b166ywen6oe28" path="res://Assets/Sprites/stone_black.svg" id="2_yhvs1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_stone"]
+radius = 12.165525
+
+[node name="StoneProjectile" type="RigidBody2D" unique_id=200209354]
+collision_layer = 8
+collision_mask = 6
+gravity_scale = 1.5
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_st")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=614553648]
+position = Vector2(-1, -2)
+scale = Vector2(0.275, 0.33333334)
+texture = ExtResource("2_yhvs1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1959247086]
+shape = SubResource("CircleShape2D_stone")

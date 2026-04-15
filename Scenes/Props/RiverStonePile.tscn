@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Scripts/RiverStonePile.gd" id="1_rp"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/stone_pile.svg" id="2_spr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rp"]
+size = Vector2(80, 40)
+
+[node name="RiverStonePile" type="Area2D"]
+collision_layer = 16
+collision_mask = 1
+script = ExtResource("1_rp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
+texture = ExtResource("2_spr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_rp")
