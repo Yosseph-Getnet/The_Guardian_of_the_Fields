@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bywb1yv64t28x" path="res://Scenes/Player/Player.tscn" id="7_4bym3"]
 
 [sub_resource type="Curve2D" id="Curve2D_qo8jy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -800, 0, 0, 0, 0, 0, -400, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, -50, 0, 0, 0, 0, 500, 0, 0, 0, 0, 0, 800, 50)
+}
+point_count = 6
 
 [node name="L3_Main" type="Node2D" unique_id=1799858005]
 
@@ -23,31 +27,46 @@ format = 2
 curve = SubResource("Curve2D_qo8jy")
 
 [node name="L3_Caravan" parent="CaravanPath" unique_id=877785775 instance=ExtResource("1_smbai")]
+position = Vector2(68, 4)
 
 [node name="WaterSources" type="Node2D" parent="." unique_id=690731267]
 
 [node name="L3_WaterSource" parent="WaterSources" unique_id=95077836 instance=ExtResource("2_7qimn")]
+position = Vector2(-200, 100)
 
 [node name="L3_WaterSource2" parent="WaterSources" unique_id=1719856843 instance=ExtResource("2_7qimn")]
+position = Vector2(200, 100)
 
 [node name="L3_WaterSource3" parent="WaterSources" unique_id=1017143305 instance=ExtResource("2_7qimn")]
+position = Vector2(600, 100)
 
 [node name="Hazards" type="Node2D" parent="." unique_id=1587026128]
+position = Vector2(-1011, -768)
 
 [node name="L3_Haboob" parent="Hazards" unique_id=1331484395 instance=ExtResource("3_4bym3")]
+position = Vector2(-1136, 808)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1105233536]
+position = Vector2(-567, -257)
 
 [node name="L3_ScavengerKing" parent="Enemies" unique_id=374906552 instance=ExtResource("4_4slu6")]
+position = Vector2(900, 0)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2129119963]
 
 [node name="L3_SurvivalUI" parent="UI" unique_id=1273136462 instance=ExtResource("5_8f4g7")]
+offset_left = -908.0
+offset_top = 48.0
+offset_right = -908.0
+offset_bottom = 48.0
 
 [node name="LevelController" type="Node" parent="." unique_id=1947039731]
 script = ExtResource("6_7qimn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=919837098]
 position = Vector2(-202, 313)
+enabled = false
 
 [node name="Player2" parent="." unique_id=2087149484 instance=ExtResource("7_4bym3")]
+position = Vector2(-600, 0)
+motion_mode = 1

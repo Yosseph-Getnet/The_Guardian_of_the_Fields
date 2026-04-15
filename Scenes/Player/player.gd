@@ -5,7 +5,7 @@ const SPEED = 200.0
 func _ready() -> void:
 	add_to_group("player")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		direction.x += 1.0

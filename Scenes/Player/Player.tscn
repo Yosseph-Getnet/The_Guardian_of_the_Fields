@@ -10,6 +10,7 @@ size = Vector2(0, 0)
 
 [node name="Player" type="CharacterBody2D" unique_id=2087149484]
 collision_mask = 6
+motion_mode = 1
 script = ExtResource("1_s0eop")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166115990]
