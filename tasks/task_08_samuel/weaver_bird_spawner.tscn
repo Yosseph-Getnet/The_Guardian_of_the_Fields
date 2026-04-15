@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bstpxe27j541t" path="res://tasks/task_08_samuel/weaver_bird_spawner.gd" id="1_3l586"]
 [ext_resource type="PackedScene" uid="uid://c15njtwxghk0q" path="res://tasks/task_08_samuel/L1_WeaverBird.tscn" id="2_8egus"]
-[ext_resource type="AudioStream" uid="uid://b0ra3obeqtouj" path="res://Assets/Sprites/Audio/freesound_community-birds-swarm-in-bush-67843.mp3" id="3_oa6lk"]
+[ext_resource type="AudioStream" uid="uid://b0ra3obeqtouj" path="res://Assets/Audio/freesound_community-birds-swarm-in-bush-67843.mp3" id="3_oa6lk"]
 
 [node name="WeaverBirdSpawner" type="Node2D" unique_id=103227602]
 script = ExtResource("1_3l586")

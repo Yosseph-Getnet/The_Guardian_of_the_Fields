@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cfag6egw038hf" path="res://tasks/Scripts/arrow.gd" id="1_u4pu1"]
 [ext_resource type="Texture2D" uid="uid://d2b3djtd0n8tx" path="res://Assets/Sprites/arrow_asset.png" id="2_os4e2"]
-[ext_resource type="AudioStream" uid="uid://d4iki0onkal52" path="res://Assets/Sprites/Audio/bow_release.mp3" id="3_os4e2"]
+[ext_resource type="AudioStream" uid="uid://d4iki0onkal52" path="res://Assets/Audio/bow_release.mp3" id="3_os4e2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwowi"]
 size = Vector2(30.5, 10)
