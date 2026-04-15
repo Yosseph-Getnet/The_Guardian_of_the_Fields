@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://da13w7s6018ti"]
+
+[ext_resource type="Script" uid="uid://bvp8swa70nf5" path="res://Scripts/Core/pathFollow2d.gd" id="1_o7wca"]
+[ext_resource type="PackedScene" uid="uid://cmcmxh6w7v4ol" path="res://Scenes/Templates/Vulturing.tscn" id="2_61uvd"]
+[ext_resource type="PackedScene" uid="uid://37as1vlvrdgl" path="res://Scenes/Templates/camel_movement.tscn" id="3_pkn61"]
+
+[sub_resource type="Curve2D" id="Curve2D_0t5hj"]
+
+[node name="demo" type="Node2D" unique_id=767235326]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=969145581]
+curve = SubResource("Curve2D_0t5hj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=632907652]
+script = ExtResource("1_o7wca")
+
+[node name="vulture" parent="Path2D/PathFollow2D" unique_id=1001118798 instance=ExtResource("2_61uvd")]
+
+[node name="cammel_movment" parent="." unique_id=583076728 instance=ExtResource("3_pkn61")]

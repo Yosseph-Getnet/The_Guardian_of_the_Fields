@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bud6h2vliqyx7"]
+
+[ext_resource type="PackedScene" uid="uid://cmcmxh6w7v4ol" path="res://Scenes/Templates/Vulturing.tscn" id="1_ob43t"]
+[ext_resource type="PackedScene" uid="uid://37as1vlvrdgl" path="res://Scenes/Templates/camel_movement.tscn" id="2_8wgp0"]
+
+[node name="Real" type="Node2D" unique_id=1419762330]
+
+[node name="cammel_movment" parent="." unique_id=583076728 instance=ExtResource("2_8wgp0")]
+position = Vector2(71, 0)
+
+[node name="vulture" parent="." unique_id=1001118798 instance=ExtResource("1_ob43t")]
+position = Vector2(71, 0)
