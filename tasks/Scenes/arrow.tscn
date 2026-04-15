@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d2qirymhtokmr"]
+
+[ext_resource type="Script" uid="uid://cfag6egw038hf" path="res://tasks/Scripts/arrow.gd" id="1_u4pu1"]
+[ext_resource type="Texture2D" uid="uid://d2b3djtd0n8tx" path="res://Assets/Sprites/arrow_asset.png" id="2_os4e2"]
+[ext_resource type="AudioStream" uid="uid://d4iki0onkal52" path="res://Assets/Audio/bow_release.mp3" id="3_os4e2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwowi"]
+size = Vector2(30.5, 10)
+
+[node name="Arrow" type="Area2D" unique_id=240709916]
+texture_filter = 1
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_u4pu1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1852118192]
+position = Vector2(0, -17)
+texture = ExtResource("2_os4e2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1563531850]
+modulate = Color(0, 0, 0, 0.23921569)
+scale = Vector2(1, 0.984375)
+texture = ExtResource("2_os4e2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=758251035]
+stream = ExtResource("3_os4e2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=575591342]
+position = Vector2(1.75, -1)
+shape = SubResource("RectangleShape2D_dwowi")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1190125867]
+position = Vector2(2, -1)
+rect = Rect2(-5, -5, 10, 10)
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

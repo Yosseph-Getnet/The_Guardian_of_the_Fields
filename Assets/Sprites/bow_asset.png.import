@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doutva0gy14f8"
-path="res://.godot/imported/L2_Zebu.png-aa21ea87dc58b6f74269ac06232d6893.ctex"
+uid="uid://c266aefswds6g"
+path="res://.godot/imported/bow_asset.png-f7f51cfe4b77043fc99c634bc0123e93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/L2/L2_Zebu.png"
-dest_files=["res://.godot/imported/L2_Zebu.png-aa21ea87dc58b6f74269ac06232d6893.ctex"]
+source_file="res://Assets/Sprites/bow_asset.png"
+dest_files=["res://.godot/imported/bow_asset.png-f7f51cfe4b77043fc99c634bc0123e93.ctex"]
 
 [params]
 
