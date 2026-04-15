@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://j0sylctru8mu" path="res://tasks/task_26_scavenger_king/scenes/L3_ScavengerKing.tscn" id="4_4slu6"]
 [ext_resource type="PackedScene" uid="uid://8g8jxy1lnp7f" path="res://tasks/task_27_jibril/survival_ui.tscn" id="5_8f4g7"]
 [ext_resource type="Script" uid="uid://bvrrh047ird1c" path="res://Scripts/L3_Main.gd" id="6_7qimn"]
+[ext_resource type="PackedScene" uid="uid://bywb1yv64t28x" path="res://Scenes/Player/Player.tscn" id="7_4bym3"]
 
 [sub_resource type="Curve2D" id="Curve2D_qo8jy"]
 
@@ -48,3 +49,5 @@ script = ExtResource("6_7qimn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=919837098]
 position = Vector2(-202, 313)
+
+[node name="Player2" parent="." unique_id=2087149484 instance=ExtResource("7_4bym3")]

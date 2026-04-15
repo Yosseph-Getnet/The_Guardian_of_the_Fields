@@ -1,23 +1,12 @@
 extends CharacterBody2D
 class_name L3_ScavengerKing
-## UC-L3-15: Armored spawn state, 90% projectile reduction (except Dimotfer Rifle), Gile/Tor vs armor,
-## rifle collision breach + exposed hide visuals (see `notify_rifle_hit_boss`).
-## UC-L3-16: Vulnerable charge (20–80% integrity), linear acceleration, Tor stagger + 3s stun,
-## post-stun jackal wave at Haboob perimeter, charge impact damage, Haboob friction hook.
-##
-## S-17 (`L2_Rifle.tscn`): the rifle’s `rifle_hit_boss` signal has **no parameters**, so it
-## cannot be bound directly to `take_damage(amount, weapon)` without a `Callable.bind(...)`.
-## Connect it to **`apply_s17_rifle_hit_from_raycast`** instead: that runs `notify_rifle_hit_boss` in
-## phase one (armor break) and applies Dimotfer damage in phase two. This node is in group **`Boss`**
-## (capital B) so `RayCast2D` collision checks for that group match, and still in **`boss`** for
-## `call_group("boss", ...)`.
 
 enum Phase { ONE, TWO }
 
+signal boss_defeated
 signal phase_two_entered
 signal armor_breach_audio_cue_requested
 signal charge_ground_shake_changed(active: bool)
-## Emitted when a full charge connects (A1). Listeners should apply `integrity_loss_ratio` to max integrity.
 signal charge_impact_dealt(target: Node2D, integrity_loss_ratio: float)
 
 @export var max_integrity: float = 500.0
@@ -31,9 +20,7 @@ signal charge_impact_dealt(target: Node2D, integrity_loss_ratio: float)
 @export var jackal_scene: PackedScene
 @export var jackals_per_wave: int = 4
 @export var haboob_perimeter_spawn_radius: float = 480.0
-## World-space center for jackal perimeter spawns; if `Vector2.ZERO`, uses group "Haboob" or this boss.
 @export var haboob_spawn_center_global: Vector2 = Vector2.ZERO
-## Used when `L2_Rifle.rifle_hit_boss` fires after armor is already broken (phase two only).
 @export var s17_rifle_damage_exposed: float = 40.0
 
 var integrity: float
@@ -60,7 +47,6 @@ func _ready() -> void:
 	visuals.set_phase(phase)
 
 
-## S-17: intended receiver for `L2_Rifle.rifle_hit_boss` (zero-arg signal).
 func apply_s17_rifle_hit_from_raycast() -> void:
 	if phase == Phase.ONE:
 		notify_rifle_hit_boss()
@@ -68,7 +54,6 @@ func apply_s17_rifle_hit_from_raycast() -> void:
 		take_damage(s17_rifle_damage_exposed, L3_Weapons.Kind.RIFLE)
 
 
-## UC-L3-16 A2: Haboob at max intensity — pass `0.75` so charge top speed is reduced by 25%.
 func set_haboob_environment_friction_multiplier(multiplier: float) -> void:
 	_haboob_charge_speed_multiplier = clampf(multiplier, 0.25, 1.0)
 
@@ -214,7 +199,6 @@ func _update_charge_shake_vfx_force_off() -> void:
 		charge_ground_shake_changed.emit(false)
 
 
-## Invoked by S-17 after Dimotfer collision validation (UC-L3-15 main flow 4–6).
 func notify_rifle_hit_boss() -> void:
 	_on_rifle_hit_boss()
 
@@ -229,7 +213,6 @@ func _on_rifle_hit_boss() -> void:
 	visuals.set_phase(phase)
 
 
-## UC-L3-15 armored rules + UC-L3-16 Tor vs active charge.
 func take_damage(amount: float, weapon: L3_Weapons.Kind) -> void:
 	if phase == Phase.ONE:
 		if L3_Weapons.is_gile_or_tor(weapon):
@@ -249,6 +232,7 @@ func take_damage(amount: float, weapon: L3_Weapons.Kind) -> void:
 
 func _die() -> void:
 	_update_charge_shake_vfx_force_off()
+	boss_defeated.emit()
 	var encounter_root := get_parent()
 	if encounter_root:
 		encounter_root.queue_free()
