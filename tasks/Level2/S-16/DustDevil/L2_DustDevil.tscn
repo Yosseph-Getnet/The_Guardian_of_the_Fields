@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dpmgndreqjl5b"]
+
+[ext_resource type="PackedScene" uid="uid://dionla2ha2gh1" path="res://Scenes/Templates/Base_Hazard.tscn" id="1_8htjl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d2c5v"]
+radius = 71.0
+
+[node name="Node2D" unique_id=381696497 instance=ExtResource("1_8htjl")]
+
+[node name="Area2D" parent="Base_Hazard" parent_id_path=PackedInt32Array(221807019) index="2" unique_id=496609815]
+scale = Vector2(1.02033, 1)
+
+[node name="CollisionShape2D" parent="Base_Hazard/Area2D" index="0" unique_id=1162577112]
+shape = SubResource("CircleShape2D_d2c5v")
