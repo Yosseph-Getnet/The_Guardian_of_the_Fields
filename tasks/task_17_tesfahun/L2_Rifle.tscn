@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c2j1yx7gd4gl5"]
+
+[ext_resource type="Texture2D" uid="uid://dhbyvwsesukgd" path="res://tasks/task_17_tesfahun/assets/L2_Rifle.png" id="1_35yoi"]
+[ext_resource type="Script" uid="uid://dcujlpacyuux7" path="res://tasks/task_17_tesfahun/L2_Rifle.gd" id="1_ang21"]
+
+[node name="L2_Rifle" type="Node2D" unique_id=159545878]
+script = ExtResource("1_ang21")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1361746304]
+target_position = Vector2(1000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1822603671]
+texture_filter = 1
+texture = ExtResource("1_35yoi")
+
+[node name="ReloadTimer" type="Timer" parent="." unique_id=382696200]
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
