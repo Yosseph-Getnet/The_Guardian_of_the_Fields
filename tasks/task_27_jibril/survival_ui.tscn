@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://8g8jxy1lnp7f"]
+
+[ext_resource type="Script" uid="uid://b2teiw56l411r" path="res://tasks/task_27_jibril/L3_ProgressBar.gd" id="1_nm36p"]
+
+[node name="SurvivalUI" type="Control" unique_id=1273136462]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress_bar_gd" type="ProgressBar" parent="." unique_id=180981898]
+custom_minimum_size = Vector2(600, 40)
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 620.0
+offset_bottom = 60.0
+script = ExtResource("1_nm36p")
