@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="The_Guardian_of_the_Fields"
+run/main_scene="uid://w7xfpwcbs7wx"
 
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -73,4 +74,5 @@ dagger={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
