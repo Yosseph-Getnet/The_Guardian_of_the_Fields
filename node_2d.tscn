@@ -1,7 +1,21 @@
-[gd_scene format=3 uid="uid://dhlnjeanbrhru"]
+[gd_scene format=3 uid="uid://clku3fydhui6r"]
 
-[ext_resource type="Texture2D" uid="uid://bw7e7xkfgmk2s" path="res://Assets/ui/L2_TallGrass.png" id="1_2rer5"]
-[ext_resource type="Script" uid="uid://t2lib5k4evhn" path="res://tasks/task_13_lion_stealth/L2_TallGrass.gd" id="2_0uhsf"]
+[sub_resource type="GDScript" id="GDScript_y32ns"]
+script/source = "extends Area2D
+
+signal lion_entered(lion)
+signal lion_exited(lion)
+
+func _on_body_entered(body):
+	if body.has_method(\"enter_grass\"):
+		body.enter_grass()
+		emit_signal(\"lion_entered\", body)
+
+func _on_body_exited(body):
+	if body.has_method(\"exit_grass\"):
+		body.exit_grass()
+		emit_signal(\"lion_exited\", body)
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0uhsf"]
 size = Vector2(582, 340)
@@ -14,8 +28,7 @@ position = Vector2(1576, 579)
 [node name="Sprite2D" type="Sprite2D" parent="TallGrass" unique_id=458159097]
 position = Vector2(271.5, 167)
 scale = Vector2(5.2421875, 6.21875)
-texture = ExtResource("1_2rer5")
-script = ExtResource("2_0uhsf")
+script = SubResource("GDScript_y32ns")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TallGrass" unique_id=64792464]
 position = Vector2(281, 202)

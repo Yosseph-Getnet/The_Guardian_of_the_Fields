@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://svjluj5aod0e"
-path="res://.godot/imported/L2_Lion.png-41e86bb94073c99dc8bd5fd846e488f0.ctex"
+uid="uid://cs4wthkbqwjw3"
+path="res://.godot/imported/New Piskel-2.png (3).png-399a088a9e89d1008c372a6d8fda8c2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tasks/task_13_lion_stealth/L2_Lion.png"
-dest_files=["res://.godot/imported/L2_Lion.png-41e86bb94073c99dc8bd5fd846e488f0.ctex"]
+source_file="res://Assets/ui/New Piskel-2.png (3).png"
+dest_files=["res://.godot/imported/New Piskel-2.png (3).png-399a088a9e89d1008c372a6d8fda8c2e.ctex"]
 
 [params]
 
